@@ -6,8 +6,8 @@ const Header = () => {
             <div className='header'>
                 <img src={logo} alt="" title="Rapid Shopping Space" />
                 <nav>
-                    <a href="/shop">Shop</a>
-                    <a href="/review">Order Review</a>
+                    <a href="../Shop">Shop</a>
+                    <a href="../Cart">Order Review</a>
                     <a href="/manage-inventory">Manage Inventory</a>
                 </nav>
             </div>
