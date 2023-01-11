@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "391c750182daa7a95396",
-    "url": "/rapid-shopping-space/static/css/main.c6ac1cfe.chunk.css"
+    "revision": "7984fe59b064e887e1f7",
+    "url": "/rapid-shopping-space/static/css/main.6b7c7602.chunk.css"
   },
   {
-    "revision": "391c750182daa7a95396",
-    "url": "/rapid-shopping-space/static/js/main.391c7501.chunk.js"
+    "revision": "7984fe59b064e887e1f7",
+    "url": "/rapid-shopping-space/static/js/main.7984fe59.chunk.js"
   },
   {
     "revision": "f09d6da400d0c14a7f1d",
@@ -20,11 +20,11 @@ self.__precacheManifest = [
     "url": "/rapid-shopping-space/static/js/runtime~main.df979a79.js"
   },
   {
-    "revision": "a10ecfc614b0f2301dde0c682e4b49e2",
-    "url": "/rapid-shopping-space/static/media/favi.a10ecfc6.png"
+    "revision": "649555fd1ff92aa6104c43577efd2a71",
+    "url": "/rapid-shopping-space/static/media/favi.649555fd.png"
   },
   {
-    "revision": "2617a9ca20d55e51d3dacf0908cb57e1",
+    "revision": "3c4d80c10ec576579160a96146327212",
     "url": "/rapid-shopping-space/index.html"
   }
 ];
