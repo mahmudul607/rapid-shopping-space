@@ -9,7 +9,7 @@ text-align: center;
     background-color: black;
     line-height: 40px;
     text-align: left;
-
+    position: relative;
 }
 nav a{
     text-decoration: none;
@@ -21,3 +21,17 @@ nav a{
 nav a:hover{
     background-color: gray;
 }
+.search-section{
+    position: relative;
+    float: right;
+    padding-right: 50px;
+}
+.search-section button{
+    margin: 4px;
+    padding: 5px;
+}
+.search-section input{
+    width: 500px;
+    height: 20px;
+}
+

@@ -10,11 +10,9 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     const handelAddToCart = (product) =>{
-        console.log(product);
         const newCart = [...cart, product];
         setCart(newCart);
     }
-    console.log(products);
     return (
         <div className='shop-container'>
             <div className="product-container">
