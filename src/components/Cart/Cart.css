@@ -1,6 +1,31 @@
 .Cart-Section{
     width: 100%;
+    background-color: cornsilk;
+    padding: 10px;
+    position: relative;
 }
 .cart-top{
     text-align: center;
+}
+.Cart-Section .amount{
+    float: right;
+    
+}
+.Cart-Section h4{
+    border-bottom: 1px dotted gray;
+}
+#special-offer{
+    color: red;
+}
+#g-total{
+    color: green;
+}
+#review-btn{
+    width: 160px;
+    height: 30px;
+    background-color: goldenrod;
+    border: 1px solid lightgray;
+    position: relative;
+    margin: 0;
+    left: 25%;
 }

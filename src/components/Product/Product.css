@@ -5,6 +5,12 @@
     margin-right: 5px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 20px;
+    
+}
+.product-details{
+    background-color: lightgray;
+    padding: 4px;
+    width: 100%;
 }
 .product-img{
     padding-right: 20px;
