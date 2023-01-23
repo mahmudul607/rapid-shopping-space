@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 const Cart = (props) => {
     const cart = props.cart;
-    console.log(cart);
     const total = cart.reduce((total, prd) => total + prd.price, 0);
     const formateNumber = pd => {
         const precision = pd.toFixed(2);
@@ -37,8 +37,8 @@ const Cart = (props) => {
     return (
         <div id="add" className='Cart-Section'>
             <div className='cart-top'>
-                <h2>Order Summary</h2>
-                <h3>Items Ordered: {props.cart.length}</h3>
+                <h2>Cart Summary</h2>
+                <h3>Cart Items: {props.cart.length}</h3>
             </div>
             <div className='cart-amount-section'>
                 <h4>Product Price: <span className='amount'>${formateNumber(total)}</span></h4>
@@ -48,7 +48,7 @@ const Cart = (props) => {
                 <h3 id='g-total'>Total Amount: <span  className='amount'>${formateNumber(grandTotal)}</span></h3>
             </div>
             
-            <a href="/review"><button id='review-btn'>Review your Order</button></a>
+            <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
 
         </div>
         

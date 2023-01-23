@@ -7,8 +7,8 @@ const Header = () => {
             <img src={logo} alt="" title="Rapid Shopping Space" />
             <nav>
                 <a href="../Shop">Shop</a>
-                <a href="../Cart">Order Review</a>
-                <a href="/manage-inventory">Manage Inventory</a>
+                <a href="../Review">Order Review</a>
+                <a href="/Manage">Manage Inventory</a>
                 <span className='search-section'>
                     <input type="text" />
                     <button type="submit">Search</button>
