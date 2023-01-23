@@ -8,6 +8,8 @@ const Cart = (props) => {
         const precision = pd.toFixed(2);
         return Number(precision);
     };
+    // Adding Class for fixed possition
+    
 
     let shipping = 0;
     if (total > 50) {
@@ -33,7 +35,7 @@ const Cart = (props) => {
     const grandTotal = total + shipping + TaxVAT - specialDiscount;
 
     return (
-        <div className='Cart-Section'>
+        <div id="add" className='Cart-Section'>
             <div className='cart-top'>
                 <h2>Order Summary</h2>
                 <h3>Items Ordered: {props.cart.length}</h3>
