@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "50bd18a1fe0d5eace6c1",
+    "revision": "0f08820df1b33ddc8a10",
     "url": "/rapid-shopping-space/static/css/main.ec2976f6.chunk.css"
   },
   {
-    "revision": "50bd18a1fe0d5eace6c1",
-    "url": "/rapid-shopping-space/static/js/main.50bd18a1.chunk.js"
+    "revision": "0f08820df1b33ddc8a10",
+    "url": "/rapid-shopping-space/static/js/main.0f08820d.chunk.js"
   },
   {
     "revision": "561126de61029355b316",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/rapid-shopping-space/static/media/favi.649555fd.png"
   },
   {
-    "revision": "876e1717e6498a077a1cc077966a0b31",
+    "revision": "509dcab08a9464fc454943642f79f5ce",
     "url": "/rapid-shopping-space/index.html"
   }
 ];
