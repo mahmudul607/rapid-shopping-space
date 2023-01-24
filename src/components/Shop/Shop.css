@@ -1,13 +1,13 @@
-.shop-container{
+.reuseable-container{
     display: flex;
     width: 100%;
 }
-.shop-container .product-container{
+.reuseable-container .product-container{
     width: 70%;
     margin-left: 20px;
     margin-right: 10px;
     border-right: 2px solid lightgray;
 }
-.shop-container .cart-container{
+.reuseable-container .cart-container{
     width: 23%;
 }
