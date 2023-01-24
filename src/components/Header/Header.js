@@ -9,6 +9,7 @@ const Header = () => {
                 <a href="../Shop">Shop</a>
                 <a href="../Review">Order Review</a>
                 <a href="/Manage">Manage Inventory</a>
+                <a href="../About">About Us</a>
                 <span className='search-section'>
                     <input type="text" />
                     <button type="submit">Search</button>

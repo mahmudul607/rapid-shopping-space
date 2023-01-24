@@ -20,7 +20,7 @@ function App() {
         <Route path="/Shop" element={<Shop></Shop>}/> 
         <Route path="/Review" element={<Review></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
-        <Route path="/" element={<Shop></Shop>}/>
+        <Route exact path="/" element={<Shop></Shop>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
       </Routes>
