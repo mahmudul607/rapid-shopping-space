@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
+import About from './components/About/About';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Review from './components/ReviewCart/Review';
 import Inventory from './components/Inventory/Inventory';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Shop" element={<Shop></Shop>}/> 
         <Route path="/Review" element={<Review></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
+        <Route path="/About" element={<About></About>}/> 
         <Route exact path="/" element={<Shop></Shop>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
