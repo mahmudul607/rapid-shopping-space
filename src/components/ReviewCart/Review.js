@@ -2,15 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import fakeData from '../../fakeData';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { clearLocalShoppingCart, getDatabaseCart, removeFromDatabaseCart} from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
+import thankYou from '../../images/thank-you-thanks.gif';
+
 
 const Review = () => {
 
   
     const [cart, setCart] = useState([]);
+    const [orderPlaced, setOrderPlaced] = useState(false);
 
     const removeReviewItem =(productKey) => {
        const newCart = cart.filter(pd => pd.key !== productKey);
@@ -35,6 +38,17 @@ const Review = () => {
                 
 
     },[]);
+
+    const placeOrder = () => {
+         setCart([]);
+         setOrderPlaced(true);
+        clearLocalShoppingCart();
+      }
+      let thankyou;
+      if(orderPlaced){
+        thankyou = <img src={thankYou} alt="thankyou" />
+
+      }
     
     return (
         <div>
@@ -47,9 +61,14 @@ const Review = () => {
                 removeReviewItem = {removeReviewItem}
                 />)
            }
+           {
+            thankyou
+           }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+               <button id="review-btn" onClick={placeOrder}>Pleace Order</button>
+                </Cart>
             </div>
           </div>
         </div>
