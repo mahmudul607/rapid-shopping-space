@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 import About from './components/About/About';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Review from './components/ReviewCart/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
