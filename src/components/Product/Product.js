@@ -4,29 +4,47 @@ import './Product.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Product = (props) => {
-    const {name, img, seller, price, stock, key} = props.product;
+    const {name, img, seller, price, stock, key, category} = props.product;
+    console.log(props.product);
     return (
-        <div className='product'>
-            <div className='product-img'>
-                <img src={img} alt="" />
-            </div>
-            <div className='product-details'>
-                <h4  className='product-name'><Link to={"/product/"+key}>{name}</Link></h4>
-                <br/>
-                <p>By: {seller}</p>
-                <p>Price: ${price}</p>
-                <p><small>Only {stock} left in stock, Order soon</small></p>
-               {props.showAddToCart === true && <button 
+
+        
+            
+    <Card style={{ width: '18rem', marginTop:'2rem', marginLeft:'1rem' }}>
+      <div className="image">
+            <Card.Img className='card-img' variant="top" src={img} />
+      </div>
+      
+      <Card.Body>
+        <Card.Title>{category}</Card.Title>
+        <Card.Text>
+          <small>
+          <Link to={"/product/"+key}>{name}</Link>
+        </small>
+        </Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Only {stock} left in stock, Order soon</ListGroup.Item>
+        <ListGroup.Item>Price: ${price}</ListGroup.Item>
+        <ListGroup.Item>By: {seller}</ListGroup.Item>
+      </ListGroup>
+      <Card.Footer>
+      {props.showAddToCart === true && <button 
                         className='add-to-cart-btn'
                         onClick={() => props.handelAddToCart(props.product)}
                         >
                     <FontAwesomeIcon icon={faShoppingCart}/>
                      Add to Cart</button>}
-            </div>
-            
-            
-        </div>
+        </Card.Footer>
+    </Card>
+
+ 
+        
     );
 };
 

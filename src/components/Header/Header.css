@@ -18,20 +18,16 @@ nav a{
     padding: 5px; 
 }
 
-nav a:hover{
-    background-color: gray;
-}
-.search-section{
-    position: relative;
+
+.header nav button{
+    background-color: transparent;
+    color: burlywood;
+    border: none;
+    border-radius: 5px;
     float: right;
-    padding-right: 50px;
+    padding-right: 20px;
+    font-size: 150%;
 }
-.search-section button{
-    margin: 4px;
-    padding: 5px;
-}
-.search-section input{
-    width: 500px;
-    height: 20px;
-}
+
+
 

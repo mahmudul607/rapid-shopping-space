@@ -1,4 +1,4 @@
-.reuseable-container{
+/* .reuseable-container{
     display: flex;
     width: 100%;
 }
@@ -10,4 +10,22 @@
 }
 .reuseable-container .cart-container{
     width: 23%;
+}
+.container .first-row{
+   
+    border: 1px solid black;
+}
+.container .first-row .first-row-col{
+    border: 2px solid red;
+} */
+
+
+
+.row{
+    width: 100% !important;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }

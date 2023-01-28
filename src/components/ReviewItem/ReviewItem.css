@@ -3,4 +3,8 @@
     border-bottom: 1px solid lightgray;
     padding-left: 100px;
     width: 70%;
+    display: flex;
+}
+.review-item .details{
+   padding: 10px;
 }
