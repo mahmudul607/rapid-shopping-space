@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product = (props) => {
     const {name, img, seller, price, stock, key, category} = props.product;
-    console.log(props.product);
     return (
 
         

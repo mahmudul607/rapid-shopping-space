@@ -10,7 +10,7 @@ const ReviewItem = (props) => {
            </div>
            <div className="details">
            <h4>{name}</h4>
-        <p>Quantity: {quantity}</p>
+            <p>Quantity: {quantity}</p>
             <p>Price: ${price}</p>
 
             <button className='add-to-cart-btn'

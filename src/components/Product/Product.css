@@ -1,24 +1,4 @@
-/* .product{
-    display: flex;
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 20px;
-    
-} */
-/* .product-details{
-    background-color: lightgray;
-    padding: 4px;
-    width: 100%;
-} */
-/* .product-img{
-    padding-right: 20px;
-} */
-/* .product-name{
-    color: blue;
-    font-weight: 400;
-} */
+
 .add-to-cart-btn{
     background-color: goldenrod;
     width: 160px;
@@ -55,9 +35,22 @@
     transform: scale(2);
     transition: 900ms;
 }
-.card, .card .card-list-group-item{
-    background-color: darkgray;
-}
 .card:hover{
     box-shadow: 5px 10px 8px lightgray;
 }
+@media (min-width: 1200px) {
+    .card{
+        width:31% !important;
+    }
+}
+@media (min-width: 992px) {
+    .card{
+        width:30% !important;
+    }
+}
+@media (min-width: 768px) {
+    .card{
+        width:45% !important;
+    }
+}
+

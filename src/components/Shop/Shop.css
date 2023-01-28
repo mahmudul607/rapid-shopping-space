@@ -19,7 +19,9 @@
     border: 2px solid red;
 } */
 
-
+.container {
+    position: relative;
+}
 
 .row{
     width: 100% !important;
@@ -29,3 +31,7 @@ ul{
     flex-wrap: wrap;
     margin-top: 10px;
 }
+@media  (min-width: 1200px) {
+    
+}
+  

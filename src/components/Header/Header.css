@@ -1,15 +1,16 @@
 .header{
 text-align: center;
 }
-.header img{
-    width: 10%;
-    height: 80px;
+.navbar .navbar-brand img{
+    width: 100%;
+    height: 50px;
 }
 .header nav{
     background-color: black;
     line-height: 40px;
     text-align: left;
     position: relative;
+    width: 100%;
 }
 nav a{
     text-decoration: none;
@@ -17,9 +18,13 @@ nav a{
     margin: 20px;
     padding: 5px; 
 }
+.cart-top-icon{
+    position: absolute;
+    top: 2%;
+   right: 20%;
+}
 
-
-.header nav button{
+.cart-top-icon button{
     background-color: transparent;
     color: burlywood;
     border: none;
@@ -27,7 +32,21 @@ nav a{
     float: right;
     padding-right: 20px;
     font-size: 150%;
+    
 }
-
+nav a {
+	text-decoration: none;
+	color: white;
+	margin: 11px !important;
+	padding: 0 !important;
+}
+.navbar{
+    padding: 0 !important;
+}
+@media (min-width: 576px) {
+    .cart-top-icon{
+       right: 25%;
+    }
+}
 
 

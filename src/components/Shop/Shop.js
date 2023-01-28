@@ -15,8 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Shop = () => {
 
-
-    const first10 = fakeData.slice(0, 20);
+//Electronics Products
+    const first10 = fakeData.slice(0, 21);
     const [products] = useState(first10);
     const [cart, setCart] = useState([]);
     useEffect(() => {
@@ -46,16 +46,17 @@ const Shop = () => {
         }
 
         setCart(newCart);
-
-        // const count = sameProduct.length;
         addToDatabaseCart(product.key, count);
 
     }
+    //Electronics Products
+
+
     return (
        
             <Container fluid>
-                <Row>
-                    <Col lg={9}><div >
+                <Row className='show-row'>
+                    <Col className='product-card' lg={9} md={9}><div >
                         <ul>
                             {
                                 products.map(product => <Product
@@ -69,7 +70,7 @@ const Shop = () => {
                             }
                         </ul>
                     </div></Col>
-                    <Col lg={3}>
+                    <Col className='reuseable-cart' lg={3} md={3}>
                         <div className='cart-section'>
                              <Cart cart={cart}>
                                 <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
