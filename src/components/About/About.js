@@ -21,7 +21,7 @@ const About = () => {
                     <ul className='dropdown'>
                         <li>Connect With us
                             <ul className='dropdown-content'>
-                                <li><a href="https://www.facebook.com/cse.md.mahmudul.h/"><FaFacebook/></a></li>
+                                <li><a href="www.facebook.com/cse.md.mahmudul.h"><FaFacebook/></a></li>
                                 <li><a href=""><FaLinkedinIn/></a></li>
                                 <li><a href=""><FaEnvelope/></a></li>
                                 <li><a href="#" title='01797692607'><FaPhone/></a></li>
