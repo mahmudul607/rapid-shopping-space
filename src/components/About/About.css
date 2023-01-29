@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+body {
+    font-family: 'Josefin Sans', cursive;
+  }
+.about-body .Chart-section{
+    margin: auto;
+    
+}
+.about-text{
+    margin: auto;
+    height: 70vh;
+    padding: 10%;
+    color: rgb(71, 78, 58);
+    text-align: center;
+    align-items: center;
+    
+}
+
+.about-text span{
+    color: green;
+}
+.contact-text{
+    text-align: right;
+}
+.contact-method{
+    text-align: left;
+    
+}
+.contact-method ul li, .contact-text{
+    font-size: 25px;
+}
+
+.contact-method .dropdown{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    margin-top: 0 !important;
+    
+}
+
+.contact-method .dropdown .dropdown-content{
+    display: none;
+    position: absolute;
+    background: #f9f9f9;
+    z-index: 1;
+    height: 50px;
+    box-shadow: 10px 2px 10px gray;
+    padding: 12px 12px;
+    
+
+}
+.contact-method .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: row !important;
+  }
+  li{
+    list-style: none;
+    margin-left: 20px;
+    
+  }
