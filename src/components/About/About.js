@@ -21,10 +21,10 @@ const About = () => {
                     <ul className='dropdown'>
                         <li>Connect With us
                             <ul className='dropdown-content'>
-                                <li><a href="#"><FaFacebook/></a></li>
-                                <li><a href="#"><FaLinkedinIn/></a></li>
-                                <li><a href="#"><FaEnvelope/></a></li>
-                                <li><a href="#" title='01797692607'><FaPhone/></a></li>
+                                <li><a href="/"><FaFacebook/></a></li>
+                                <li><a href="/"><FaLinkedinIn/></a></li>
+                                <li><a href="/"><FaEnvelope/></a></li>
+                                <li><a href="/" title='01797692607'><FaPhone/></a></li>
                             </ul>
                         </li>
 
