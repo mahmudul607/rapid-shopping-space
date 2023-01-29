@@ -46,7 +46,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
         fill="#8884d8"
         dataKey="value"
       >
-        {data.map((index) => (
+        {data.map(( index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           
         ))}
@@ -65,7 +65,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
        
       >
         
-        {data1.map((index) => (
+        {data1.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           
         ))}
