@@ -43,6 +43,15 @@ nav a {
 .navbar{
     padding: 0 !important;
 }
+.user-area{
+    position: absolute;
+    top: 2%;
+   right: 10%;
+}
+.user-icon{
+    color: white;
+    font-size: 30px;    
+}
 @media (min-width: 576px) {
     .cart-top-icon{
        right: 25%;

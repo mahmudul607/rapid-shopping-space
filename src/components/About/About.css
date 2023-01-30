@@ -7,12 +7,9 @@ body {
     
 }
 .about-text{
-    margin: auto;
-    height: 70vh;
-    padding: 10%;
+    padding: 5%;
     color: rgb(71, 78, 58);
-    text-align: center;
-    align-items: center;
+  
     
 }
 
@@ -42,20 +39,108 @@ body {
 .contact-method .dropdown .dropdown-content{
     display: none;
     position: absolute;
-    background: #f9f9f9;
     z-index: 1;
     height: 50px;
-    box-shadow: 10px 2px 10px gray;
     padding: 12px 12px;
+    transition: 30000ms;
+    padding-top: 0;
     
 
+}
+.contact-method .dropdown .dropdown-content a:hover{
+    color: gold;
 }
 .contact-method .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: row !important;
+    top: 0;
+    border-radius: 10px;
+    align-items: center;
+    animation: hoverforcontact 1s linear;
+    animation-fill-mode: forwards; 
   }
+  .contact-method .dropdown ul{
+    margin-top: 0 !important;
+    top: 0;
+    display: flex;
+  }
+  .contact-method button{
+    border: 1px solid sandybrown;
+    background: sandybrown;
+    border-radius: 10px;
+  }
+ 
   li{
     list-style: none;
     margin-left: 20px;
     
+  }
+
+  .footer{
+    height: 200px;
+  }
+  .about-text ul li{
+    text-align: left;
+    color: darkolivegreen;
+  }
+  .about-text h4{
+    padding-top: 20px;
+  }
+  .about-text ul{
+    flex-direction: column;
+   
+  }
+  .about-text .circle{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    margin:auto;
+    text-align: center;
+    border: 5px dotted blue;
+    
+    
+}
+  .about-text .circle h1{
+    margin: auto;
+    padding: 15%;
+  }
+  .about-text .circle .love{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -10px;
+    left: 40%;
+  }
+  .about-text .circle .love a  .heart-icon{
+    top: 0;
+    font-size: 50px;
+    color: red;
+    overflow: hidden;
+    
+  }
+  .about-text .circle .love a  .heart-icon{
+    animation: mymove 3s linear infinite;
+    transition: 2000ms;
+    animation-delay: 1s;
+  }
+  @keyframes mymove {
+    from{
+        color: red;
+    }
+    to{
+        color: green;
+        transform: rotateY(360deg);
+    }
+  
+  }
+
+  @keyframes hoverforcontact {
+    from{
+       
+        left: 0;
+    }
+    to{
+        left: 40%;
+    }
+  
   }

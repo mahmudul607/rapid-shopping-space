@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUserCircle } from "react-icons/fa";
 
 
 
@@ -65,7 +66,10 @@ function add(accumulator, a) {
                     <FontAwesomeIcon icon={faShoppingCart}/>
                      </button></Link>
         </div>
-    
+    <div className="user-area">
+      <div className="user"></div>
+      <div className="user-icon"><FaUserCircle/></div>
+    </div>
 
 
 
