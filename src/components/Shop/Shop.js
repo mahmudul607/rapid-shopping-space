@@ -9,6 +9,7 @@ import './Shop.css';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from '../Footer/Footer';
 
 
 
@@ -81,6 +82,7 @@ const Shop = () => {
                         
                     </Col>
                 </Row>
+                <Footer></Footer>
 
             </Container>
 
