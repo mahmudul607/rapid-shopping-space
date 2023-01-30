@@ -19,18 +19,18 @@ const Footer = () => {
                     </Col>
                     <Col lg={4}>
                         <ul><h4>Connect With Us</h4>
-                            <li><a href="#"><FaFacebook />  Facebook</a></li>
-                            <li><a href="#"><FaLinkedinIn />  LinkedIn</a></li>
-                            <li><a href="#"><FaTwitter/>  Twitter</a></li>
-                            <li><a href="#"><FaEnvelope/>  Email</a></li>
+                            <li><a href="/"><FaFacebook />  Facebook</a></li>
+                            <li><a href="/"><FaLinkedinIn />  LinkedIn</a></li>
+                            <li><a href="/"><FaTwitter/>  Twitter</a></li>
+                            <li><a href="/"><FaEnvelope/>  Email</a></li>
                         </ul>
                     </Col>
                     <Col lg={4}>
                         <ul><h4>Rank</h4>
-                            <li><a href="#">Rank-1 Seller</a></li>
-                            <li><a href="#">Rank-2 Seller</a></li>
-                            <li><a href="#">Rank-3 Seller</a></li>
-                            <li><a href="#">Rank-4 Seller</a></li>
+                            <li><a href="/">Rank-1 Seller</a></li>
+                            <li><a href="/">Rank-2 Seller</a></li>
+                            <li><a href="/">Rank-3 Seller</a></li>
+                            <li><a href="/">Rank-4 Seller</a></li>
                         </ul>
                     </Col>
                    
