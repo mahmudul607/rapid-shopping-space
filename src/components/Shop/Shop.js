@@ -61,6 +61,7 @@ const Shop = () => {
                             {
                                 products.map(product => <Product
                                     showAddToCart={true}
+                                    cart={cart}
                                     product={product}
                                     handelAddToCart={handelAddToCart}
                                     key={product.key}

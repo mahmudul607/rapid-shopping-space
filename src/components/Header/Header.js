@@ -13,22 +13,29 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 
+
 const Header = () => {
-    const [cart, setCart] = useState({})
+    const [cart, setCart] = useState([]);
+    const sum = cart.reduce(add, 0);
+function add(accumulator, a) {
+  return accumulator + a;
+}
+
     useEffect(() => {
         // cart
         const saveCart = getDatabaseCart();
         const productKeys = Object.keys(saveCart);
-        console.log(productKeys);
-
           const cartProducts = productKeys.map(key =>{
               const product = fakeData.find(pd => pd.key === key);
               product.quantity = saveCart[key];
-              return product;
+              const t = product.quantity;
+              return t;
 
           }) ;
           setCart(cartProducts);
 },[]);
+
+
    
 
     return (
@@ -54,7 +61,7 @@ const Header = () => {
       </Container>
     </Navbar>
         <div className='cart-top-icon'> 
-        <Link to="/Review"><button><span>{cart.length}</span>
+        <Link to="/Review"><button><span>{sum}</span>
                     <FontAwesomeIcon icon={faShoppingCart}/>
                      </button></Link>
         </div>

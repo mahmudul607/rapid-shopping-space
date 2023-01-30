@@ -2,15 +2,16 @@ import React from 'react';
 import './Cart.css';
 const Cart = (props) => {
     const cart = props.cart;
-    const total = cart.reduce((total, prd) => total + prd.price*prd.quantity , 0);
+
+
+    const total = cart.reduce((total, prd) => total + prd.price * prd.quantity, 0);
     const qq = cart.reduce((qq, q) => qq + q.quantity, 0);
-    
     const formateNumber = pd => {
         const precision = pd.toFixed(2);
         return Number(precision);
     };
     // Adding Class for fixed possition
-    
+
 
     let shipping = 0;
     if (total > 50) {
@@ -47,15 +48,18 @@ const Cart = (props) => {
                 <h6>Shipping Cost: <span className='amount'>${formateNumber(shipping)}</span></h6>
                 <h5>Tax & VAT: <span className='amount'>${formateNumber(TaxVAT)}</span></h5>
                 <h3 id='special-offer'>Special Discount: <span className='amount'>${formateNumber(specialDiscount)}</span></h3>
-                <h3 id='g-total'>Total Amount: <span  className='amount'>${formateNumber(grandTotal)}</span></h3>
+                <h3 id='g-total'>Total Amount: <span className='amount'>${formateNumber(grandTotal)}</span></h3>
             </div>
-            {
-                props.children
-            }
-            
+            <div  className='review-btn'>
+                {
+                    props.children
+                }
+            </div>
+
+
 
         </div>
-        
+
     );
 };
 

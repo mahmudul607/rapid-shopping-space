@@ -21,12 +21,10 @@
 #g-total{
     color: green;
 }
-#review-btn{
-    width: 160px;
-    height: 30px;
-    background-color: goldenrod;
-    border: 1px solid lightgray;
-    position: relative;
-    margin: 0;
-    left: 25%;
+.review-btn{
+    text-align: center;
+}
+
+@media  (min-width: 768px) {
+  
 }

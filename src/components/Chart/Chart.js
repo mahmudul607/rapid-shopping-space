@@ -1,18 +1,19 @@
 import React from 'react';
 import { PieChart, Pie, Cell} from 'recharts';
+import './Chart.css'
 
 const Chart = () => {
     const data = [
         { name: 'Group A', value: 600 },
-        { name: 'Group B', value: 300 },
+        { name: 'Group B', value: 400 },
         { name: 'Group C', value: 300 },
         { name: 'Group D', value: 100 },
       ];
     const data1 = [
-        { name: 'Group A', value: 600 },
-        { name: 'Group B', value: 300 },
-        { name: 'Group C', value: 300 },
-        { name: 'Group D', value: 100 },
+        { name: 'Products', value: 600 },
+        { name: 'Customer', value: 400 },
+        { name: 'Viewers', value: 300 },
+        { name: 'Sellers', value: 100 },
       ];
       const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -33,11 +34,11 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
     return (
-        <PieChart width={400} height={400}>
+        <PieChart  height={500} width={650} className="pieChart-body">
       <Pie
         data={data}
-        cx={200}
-        cy={200}
+        cx={250}
+        cy={250}
         labelLine={false}
         label={renderCustomizedLabel}
         outerRadius={90}
@@ -53,15 +54,14 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       </Pie>
       <Pie
         data={data1}
-        cx={200}
-        cy={200}
-        labelLine={false}
-        label={renderCustomizedLabel}
-        outerRadius={180}
+        cx={250}
+        cy={250}
+        labelLine={true}
+        label={name => `${name.name}`}
+        outerRadius={170}
         innerRadius={100}
         fill=""
         dataKey="value"
-       
        
       >
         

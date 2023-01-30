@@ -11,7 +11,7 @@ const About = () => {
         <Container>
             <Row className='about-body'>
                 <Col className='about-text' lg={6}>
-                    <h1>Your Needs <br /><span>is</span><br /> Our Targets</h1>
+                    <h1>Your Needs <br /><span>is</span><br /> Our Target</h1>
                 </Col>
                 <Col className='Chart-section' lg={6}><Chart></Chart></Col>
             </Row>
