@@ -1,35 +1,39 @@
 
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import fakeData from '../../fakeData';
-import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
-import Cart from '../Cart/Cart';
+import { addToDatabaseCart } from '../../utilities/databaseManager';
 import Product from '../Product/Product';
 import './Shop.css';
-import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../Footer/Footer';
+import ManageBar from '../ManageBar/ManageBar';
 
 
 
 
-const Shop = () => {
+
+const Shop = (props) => {
 
 //Electronics Products
     const first10 = fakeData.slice(0, 21);
+    
+
     const [products] = useState(first10);
-    const [cart, setCart] = useState([]);
-    useEffect(() => {
-        const saveCart = getDatabaseCart();
-        const productKeys = Object.keys(saveCart);
-        const previousCart = productKeys.map(exitingKey => {
-            const product = fakeData.find(pd => pd.key === exitingKey);
-            product.quantity = saveCart[exitingKey];
-            return product;
-        })
-        setCart(previousCart);
-    }, [])
+    const {cart, setCart} = props;
+
+    // useEffect(() => {
+    //     const saveCart = getDatabaseCart();
+    //     const productKeys = Object.keys(saveCart);
+    //     const previousCart = productKeys.map(exitingKey => {
+    //         const product = fakeData.find(pd => pd.key === exitingKey);
+    //         product.quantity = saveCart[exitingKey];
+    //         return product;
+    //     })
+    //     setCart(previousCart);
+       
+    // }, []);
+    
 
     const handelAddToCart = (product) => {
         const sameProduct = cart.find(pd => pd.key === product.key);
@@ -56,8 +60,22 @@ const Shop = () => {
     return (
        
             <Container fluid>
+
+                <Row><ManageBar></ManageBar></Row>
                 <Row className='show-row'>
-                    <Col className='product-card' lg={9} md={9}><div >
+                <Col className='reuseable-cart' lg={2} md={3}>
+                        <div className='cart-section'>
+                            <h3>Categories</h3>
+
+                             {/* <Cart cart={cart}>
+                                <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
+                            </Cart> */}
+                        </div>
+                            
+                        
+                    </Col>
+                    <Col className='product-card' lg={10} md={10}>
+                        <div >
                         <ul>
                             {
                                 products.map(product => <Product
@@ -71,16 +89,9 @@ const Shop = () => {
                                 </Product>)
                             }
                         </ul>
-                    </div></Col>
-                    <Col className='reuseable-cart' lg={3} md={3}>
-                        <div className='cart-section'>
-                             <Cart cart={cart}>
-                                <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
-                            </Cart>
-                        </div>
-                            
-                        
+                    </div>
                     </Col>
+                    
                 </Row>
                 <Footer></Footer>
 

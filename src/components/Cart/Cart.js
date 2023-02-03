@@ -38,6 +38,7 @@ const Cart = (props) => {
 
     return (
         <div id="add" className='Cart-Section'>
+            
             <div className='cart-top'>
                 <h2>Cart Summary</h2>
                 <h3>Cart Items: {props.cart.length}</h3>
@@ -57,7 +58,7 @@ const Cart = (props) => {
             </div>
 
 
-
+            
         </div>
 
     );

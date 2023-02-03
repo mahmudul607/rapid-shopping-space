@@ -1,8 +1,10 @@
 import React from 'react';
 import './ReviewItem.css'
 const ReviewItem = (props) => {
+   
     const {name, quantity, price, key, img} = props.product;
-
+    
+    
     return (
         <div className='review-item'>
            <div className="img">

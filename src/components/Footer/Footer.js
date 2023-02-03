@@ -12,7 +12,7 @@ const Footer = () => {
                     <Col lg={4}>
                         <ul><h4>Quick Links</h4>
                             <li><a href="../Shop">Shop</a></li>
-                            <li><a href="../ReviewCart">Review Your Cart</a></li>
+                            <li><a href="../Review">Review Your Cart</a></li>
                             <li><a href="../Inventory">Manage Inventory</a></li>
                             <li><a href="../About">About</a></li>
                         </ul>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import fakeData from '../../fakeData';
-import { clearLocalShoppingCart, getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { clearLocalShoppingCart, getDatabaseCart, removeFromDatabaseCart} from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
@@ -10,10 +10,11 @@ import thankYou from '../../images/thank-you-thanks.gif';
 import { Col, Container, Row } from 'react-bootstrap';
 
 
+
+
 const Review = () => {
+const [cart, setCart] = useState([]);
 
-
-  const [cart, setCart] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   const removeReviewItem = (productKey) => {
@@ -67,7 +68,7 @@ const Review = () => {
         </Col>
         <Col><div className="cart-container">
           <Cart cart={cart}>
-            <button id="review-btn" onClick={placeOrder}>Pleace Order</button>
+            <button id="review-btn" onClick={placeOrder}>Place Order</button>
           </Cart>
         </div></Col>
 
