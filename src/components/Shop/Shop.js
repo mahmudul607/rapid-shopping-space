@@ -51,7 +51,7 @@ const Shop = (props) => {
     
        
 
-    }, [first10]);
+    }, [category]);
     
 
     const handelAddToCart = (product) => {
