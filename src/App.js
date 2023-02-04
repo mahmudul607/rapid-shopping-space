@@ -11,18 +11,19 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import { getDatabaseCart} from './utilities/databaseManager';
 import fakeData from './fakeData';
 
-export const QuantityContext = createContext();
+export const CategoryContext = createContext();
 
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [category, setCategory] = useState('')
   useEffect(() => {
     // cart
     const saveCart = getDatabaseCart();
     const productKeys = Object.keys(saveCart);
 
 
-    const cartProducts = productKeys.map(key => {
+      const cartProducts = productKeys.map(key => {
       const product = fakeData.find(pd => pd.key === key);
       product.quantity = saveCart[key];
       return product;
@@ -31,12 +32,12 @@ function App() {
     setCart(cartProducts);
   }, []);
 
-  const qq = cart.reduce((qq, q) => qq + q.quantity, 0);
+ 
 
  
 
   return (
-    <QuantityContext.Provider value={[qq, cart, setCart]}>
+    <CategoryContext.Provider value={[category, setCategory]}>
        
       <BrowserRouter>
       <>
@@ -54,7 +55,7 @@ function App() {
       </BrowserRouter>
       
 
-    </QuantityContext.Provider>
+    </CategoryContext.Provider>
   );
 }
 

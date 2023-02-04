@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import { addToDatabaseCart } from '../../utilities/databaseManager';
 import Product from '../Product/Product';
@@ -8,6 +8,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../Footer/Footer';
 import ManageBar from '../ManageBar/ManageBar';
+import { CategoryContext} from '../../App';
 
 
 
@@ -16,10 +17,9 @@ import ManageBar from '../ManageBar/ManageBar';
 const Shop = (props) => {
 
 //Electronics Products
-    const first10 = fakeData.slice(0, 21);
-    
-
-    const [products] = useState(first10);
+    const first10 = fakeData.slice(0, 31);
+    const [category] = useContext(CategoryContext);
+    const [products, setProducts] = useState(first10);
     const {cart, setCart} = props;
 
     // useEffect(() => {
@@ -33,6 +33,25 @@ const Shop = (props) => {
     //     setCart(previousCart);
        
     // }, []);
+
+    useEffect(() => {
+      
+            const matchProducts = first10.filter(pd => pd.category.toLowerCase() === category.toLowerCase())
+            if(matchProducts.length > 0) {
+                setProducts(matchProducts)
+            }
+            else {
+                setProducts(first10)
+            }
+
+        
+        
+       
+
+    
+       
+
+    }, [first10]);
     
 
     const handelAddToCart = (product) => {
@@ -63,9 +82,18 @@ const Shop = (props) => {
 
                 <Row><ManageBar></ManageBar></Row>
                 <Row className='show-row'>
-                <Col className='reuseable-cart' lg={2} md={3}>
+                <Col className='reuseable-cart' lg={2} md={3} style={{paddingTop:'20px'}}>
                         <div className='cart-section'>
-                            <h3>Categories</h3>
+                            <h3>Brands:</h3>
+                            <ul style={{flexDirection:'column'}}>
+                                <h4><a href="/">Nokia</a> </h4>
+                                
+                                <h4><a href="/">Dell</a> </h4>
+                                
+                                <h4><a href="/">Lenovo</a> </h4>
+                                
+                                <h4><a href="/">Canon</a> </h4>
+                            </ul>
 
                              {/* <Cart cart={cart}>
                                 <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>

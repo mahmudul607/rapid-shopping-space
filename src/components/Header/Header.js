@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import logo from '../../images/favi.png';
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,12 +9,13 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { QuantityContext } from '../../App';
 
 
 
-const Header = () => {
-  const [qq] = useContext(QuantityContext);
+
+const Header = (props) => {
+  const cart = props.cart;
+  const qq = cart.reduce((qq, q) => qq + q.quantity, 0);
 
     return (
         <>
