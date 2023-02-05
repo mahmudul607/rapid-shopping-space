@@ -42,7 +42,6 @@ const BottomFixedCart = (props) => {
     height:'35px',
     width:'35px',
     paddingBottom:0,
-    borderRadius:'50%',
     borderRadius:'50% 50% 0 50%',
     top:20,
     color:'red',
