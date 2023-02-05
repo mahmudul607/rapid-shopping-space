@@ -41,7 +41,7 @@ const Carousel = () => {
             setIntervalId(id);
         }
         return () => clearInterval(intervalId);
-    }, [autoPlay]);
+    }, [autoPlay, images.length, index, intervalId]);
 
     const imgDivStyle ={
         width: '25%', 
