@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../Footer/Footer';
 import ManageBar from '../ManageBar/ManageBar';
 import { CategoryContext} from '../../App';
+import Carousel from '../Carousel/Carousel';
 
 
 
@@ -48,7 +49,7 @@ const Shop = (props) => {
     return (
        
             <Container fluid>
-
+                <Row><Carousel></Carousel></Row>
                 <Row><ManageBar></ManageBar></Row>
                 <Row className='show-row'>
                 <Col className='reuseable-cart' lg={1} md={1} style={{paddingTop:'20px'}}>
