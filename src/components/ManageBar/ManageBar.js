@@ -16,7 +16,7 @@ const ManageBar = () => {
 
 
     return (
-        <Container fluid>
+        <Container fluid className='manageBar'>
             <Row>
                 <Col lg={4} style={{paddingLeft:'15px'}}>
                 

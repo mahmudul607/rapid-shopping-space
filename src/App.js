@@ -11,6 +11,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import { addToDatabaseCart, getDatabaseCart } from './utilities/databaseManager';
 import fakeData from './fakeData';
 import GoToTop from './components/GoToTop/GoToTop';
+import Carousel from './components/Carousel/Carousel';
 
 
 
@@ -61,6 +62,7 @@ const handelAddToCart = (product) => {
       <BrowserRouter>
       <>
         <Header cart={cart}></Header>
+        <Carousel cart={cart}></Carousel>
       <Routes>
         <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
         <Route path="/Review" element={<Review></Review>}/> 

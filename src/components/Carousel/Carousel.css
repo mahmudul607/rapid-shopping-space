@@ -1,0 +1,19 @@
+.carousel__image-container img{
+  width: 100%;
+  height: 100%;
+}
+.carousel__image-container{
+    overflow: hidden;
+}
+.carousel-button-carousel-button--prev{
+    position: absolute;
+    background: transparent;
+    left: 2%;
+    top: 50%;
+}
+.carousel-button-carousel-button--next{
+    position: absolute;
+    background: transparent;
+    right: 2%;
+    top: 50%;
+}

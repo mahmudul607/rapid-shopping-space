@@ -2,3 +2,7 @@
     cursor: pointer;
     color: green;
 }
+.manageBar{
+    margin-top: 20px;
+    background: lightgray;
+}
