@@ -49,7 +49,7 @@ const Carousel = () => {
             setIntervalId(id);
         }
         return () => clearInterval(intervalId);
-    }, [autoPlay, images.length, images1.length, images2.length, index, intervalId]);
+    }, [autoPlay, images.length, images1.length, images2.length, index, index1, index2, intervalId]);
 
    
 
