@@ -17,7 +17,10 @@ const BottomFixedCart = (props) => {
     textAlign:'center',
     right:'10%',
     paddingBottom:0,
-    padding: '1%'
+    padding: '1%',
+    border:'1px solid red',
+    borderRadius:'10%',
+    color:'white'
   }
   const CartIconStyle1 = {
     zIndex:'110', 
