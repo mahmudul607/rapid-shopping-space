@@ -18,8 +18,10 @@ const ManageBar = () => {
     return (
         <Container fluid>
             <Row>
-                <Col lg={4} style={{paddingLeft:'30px'}}>
-                    <ul className='category'>
+                <Col lg={4} style={{paddingLeft:'15px'}}>
+                
+                <ul className='category'>
+                <h4>Category:</h4>
                     <li onClick={() => setCategory('All')}>All</li>
                     <li onClick={() => setCategory('Laptop')}>Laptop</li>
                     <li onClick={() => setCategory('Android')}>Mobile</li>
@@ -27,6 +29,8 @@ const ManageBar = () => {
 
                         
                     </ul>
+                
+                    
                     
                     
                 </Col>
