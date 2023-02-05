@@ -20,28 +20,38 @@ const Carousel = () => {
 
     const autoPlay = true;
     const [index, setIndex] = useState(0);
+    const [index1, setIndex1] = useState(0);
+    const [index2, setIndex2] = useState(0);
     const [intervalId, setIntervalId] = useState(null);
 
 
     const handlePrev = () => {
         clearInterval(intervalId);
         setIndex(index === 0 ? images.length - 1 : index - 1);
+        setIndex1(index1 === 0 ? images1.length - 1 : index1 - 1);
+        setIndex2(index2 === 0 ? images2.length - 1 : index2 - 1);
     };
 
     const handleNext = () => {
         clearInterval(intervalId);
         setIndex(index === images.length - 1 ? 0 : index + 1);
+        setIndex1(index1 === images1.length - 1 ? 0 : index1 + 1);
+        setIndex2(index2 === images2.length - 1 ? 0 : index2 + 1);
     };
 
     useEffect(() => {
         if (autoPlay) {
             const id = setInterval(() => {
                 setIndex(index === images.length - 1 ? 0 : index + 1);
-            }, 3000);
+                setIndex(index === images1.length - 1 ? 0 : index1 + 1);
+                setIndex(index === images2.length - 1 ? 0 : index2 + 1);
+            }, 9000);
             setIntervalId(id);
         }
         return () => clearInterval(intervalId);
-    }, [autoPlay, images.length, index, intervalId]);
+    }, [autoPlay, images.length, images1.length, images2.length, index, intervalId]);
+
+   
 
     const imgDivStyle ={
         width: '25%', 

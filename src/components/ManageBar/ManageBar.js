@@ -1,14 +1,14 @@
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { CategoryContext} from '../../App';
+
 import './ManageBar.css'
 
 
 
 
 const ManageBar = () => {
-    const [category, setCategory] = useContext(CategoryContext);
+    
 
 
 
@@ -18,26 +18,10 @@ const ManageBar = () => {
     return (
         <Container fluid className='manageBar'>
             <Row>
-                <Col lg={4} style={{paddingLeft:'15px'}}>
-                
-                <ul className='category'>
-                <h4>Category:</h4>
-                    <li onClick={() => setCategory('All')}>All</li>
-                    <li onClick={() => setCategory('Laptop')}>Laptop</li>
-                    <li onClick={() => setCategory('Android')}>Mobile</li>
-                    <li onClick={() => setCategory('Camera')}>Camera</li>
-
-                        
-                    </ul>
-                
-                    
-                    
-                    
+                <Col lg={4}> 
                 </Col>
                 <Col lg={4}>
-                    
-                        <h1 style={{textAlign:'center'}}>{category}</h1> 
-                    
+                        <h1 style={{textAlign:'center'}}>{}</h1> 
                     </Col>
                 <Col lg={4}> </Col>
             </Row>
