@@ -1,7 +1,6 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
-import { addToDatabaseCart } from '../../utilities/databaseManager';
 import Product from '../Product/Product';
 import './Shop.css';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -14,29 +13,24 @@ import { CategoryContext} from '../../App';
 
 
 
+
 const Shop = (props) => {
+
+    const {cart, handelAddToCart} = props;
+
+   
 
 //Electronics Products
     const first10 = fakeData.slice(0, 31);
     const [category] = useContext(CategoryContext);
     const [products, setProducts] = useState(first10);
-    const {cart, setCart} = props;
+  
 
-    // useEffect(() => {
-    //     const saveCart = getDatabaseCart();
-    //     const productKeys = Object.keys(saveCart);
-    //     const previousCart = productKeys.map(exitingKey => {
-    //         const product = fakeData.find(pd => pd.key === exitingKey);
-    //         product.quantity = saveCart[exitingKey];
-    //         return product;
-    //     })
-    //     setCart(previousCart);
-       
-    // }, []);
+   
 
     useEffect(() => {
       
-            const matchProducts = first10.filter(pd => pd.category.toLowerCase() === category.toLowerCase())
+            const matchProducts = first10.filter(pd => pd.category === category.toLowerCase())
             if(matchProducts.length > 0) {
                 setProducts(matchProducts)
             }
@@ -44,35 +38,10 @@ const Shop = (props) => {
                 setProducts(first10)
             }
 
-        
-        
-       
-
-    
-       
-
-    }, [first10 ,category]);
+    }, [category]);
     
 
-    const handelAddToCart = (product) => {
-        const sameProduct = cart.find(pd => pd.key === product.key);
-        let count = 1;
-        let newCart;
-        if (sameProduct) {
-            count = sameProduct.quantity + 1;
-            sameProduct.quantity = count;
-            const others = cart.filter(pd => pd.key !== product.key);
-            newCart = [...others, sameProduct];
-        }
-        else {
-            product.quantity = 1;
-            newCart = [...cart, product];
-        }
-
-        setCart(newCart);
-        addToDatabaseCart(product.key, count);
-
-    }
+    
     //Electronics Products
 
 
@@ -82,7 +51,7 @@ const Shop = (props) => {
 
                 <Row><ManageBar></ManageBar></Row>
                 <Row className='show-row'>
-                <Col className='reuseable-cart' lg={2} md={3} style={{paddingTop:'20px'}}>
+                <Col className='reuseable-cart' lg={1} md={1} style={{paddingTop:'20px'}}>
                         <div className='cart-section'>
                             <h3>Brands:</h3>
                             <ul style={{flexDirection:'column'}}>
@@ -94,7 +63,7 @@ const Shop = (props) => {
                                 
                                 <h4><a href="/">Canon</a> </h4>
                             </ul>
-
+                            
                              {/* <Cart cart={cart}>
                                 <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
                             </Cart> */}
@@ -103,7 +72,7 @@ const Shop = (props) => {
                         
                     </Col>
                     <Col className='product-card' lg={10} md={10}>
-                        <div >
+                        <div key={products.key}>
                         <ul>
                             {
                                 products.map(product => <Product

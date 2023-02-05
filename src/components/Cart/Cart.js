@@ -1,9 +1,9 @@
 import React from 'react';
 import './Cart.css';
+
 const Cart = (props) => {
-    const cart = props.cart;
-
-
+    const {cart} = props;
+    
     const total = cart.reduce((total, prd) => total + prd.price * prd.quantity, 0);
     const qq = cart.reduce((qq, q) => qq + q.quantity, 0);
     const formateNumber = pd => {
@@ -41,15 +41,15 @@ const Cart = (props) => {
             
             <div className='cart-top'>
                 <h2>Cart Summary</h2>
-                <h3>Cart Items: {props.cart.length}</h3>
+                <h3>Cart Items: {cart.length}</h3>
             </div>
             <div className='cart-amount-section'>
                 <h6>Product Price: <span className='amount'>${formateNumber(total)}</span></h6>
                 <h6>Quantity: <span className='amount'>{qq}</span></h6>
                 <h6>Shipping Cost: <span className='amount'>${formateNumber(shipping)}</span></h6>
                 <h5>Tax & VAT: <span className='amount'>${formateNumber(TaxVAT)}</span></h5>
-                <h3 id='special-offer'>Special Discount: <span className='amount'>${formateNumber(specialDiscount)}</span></h3>
-                <h3 id='g-total'>Total Amount: <span className='amount'>${formateNumber(grandTotal)}</span></h3>
+                <h4 id='special-offer'>Special Discount: <span className='amount'>${formateNumber(specialDiscount)}</span></h4>
+                <h4 id='g-total'>Total Amount: <span className='amount'>${formateNumber(grandTotal)}</span></h4>
             </div>
             <div  className='review-btn'>
                 {

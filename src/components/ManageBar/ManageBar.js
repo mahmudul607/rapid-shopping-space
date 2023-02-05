@@ -35,7 +35,7 @@ const ManageBar = () => {
                         <h1 style={{textAlign:'center'}}>{category}</h1> 
                     
                     </Col>
-                <Col lg={4}></Col>
+                <Col lg={4}> </Col>
             </Row>
         </Container>
     );

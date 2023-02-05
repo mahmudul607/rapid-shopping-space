@@ -8,33 +8,52 @@ import Review from './components/ReviewCart/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import ProductDetails from './components/ProductDetails/ProductDetails';
-import { getDatabaseCart} from './utilities/databaseManager';
+import { addToDatabaseCart, getDatabaseCart } from './utilities/databaseManager';
 import fakeData from './fakeData';
+import GoToTop from './components/GoToTop/GoToTop';
+
+
 
 export const CategoryContext = createContext();
 
 
 function App() {
-  const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('')
+  //add
+  const [cart, setCart] = useState([]);
   useEffect(() => {
-    // cart
     const saveCart = getDatabaseCart();
     const productKeys = Object.keys(saveCart);
+    const previousCart = productKeys.map(exitingKey => {
+        const product = fakeData.find(pd => pd.key === exitingKey);
+        product.quantity = saveCart[exitingKey];
+        return product;
+    })
+    setCart(previousCart);
+   
+}, []);
 
+const handelAddToCart = (product) => {
+  const sameProduct = cart.find(pd => pd.key === product.key);
+  let count = 1;
+  let newCart;
+  if (sameProduct) {
+      count = sameProduct.quantity + 1;
+      sameProduct.quantity = count;
+      const others = cart.filter(pd => pd.key !== product.key);
+      newCart = [...others, sameProduct];
+  }
+  else {
+      product.quantity = 1;
+      newCart = [...cart, product];
+  }
 
-      const cartProducts = productKeys.map(key => {
-      const product = fakeData.find(pd => pd.key === key);
-      product.quantity = saveCart[key];
-      return product;
+  setCart(newCart);
+  addToDatabaseCart(product.key, count);
 
-    });
-    setCart(cartProducts);
-  }, []);
+}
 
- 
-
- 
+//add end
 
   return (
     <CategoryContext.Provider value={[category, setCategory]}>
@@ -43,14 +62,16 @@ function App() {
       <>
         <Header cart={cart}></Header>
       <Routes>
-        <Route path="/Shop" element={<Shop cart={cart} setCart={setCart}></Shop>}/> 
+        <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
         <Route path="/Review" element={<Review></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
         <Route path="/About" element={<About></About>}/> 
-        <Route exact path="/" element={<Shop></Shop>}/>
+        <Route exact path="/" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
       </Routes>
+      
+      <GoToTop></GoToTop>
       </>
       </BrowserRouter>
       
