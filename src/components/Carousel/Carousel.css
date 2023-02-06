@@ -1,11 +1,10 @@
-.carousel__image-container img{
-  width: 100%;
+.carousel__image-slide img{
+  width: 60%;
   height: 100%;
-  box-shadow: 20px 10px 10px lightgray;
+  padding: 3%;
+  box-shadow: 10px 10px 20px 20px lightgray;
 }
-.carousel__image-container{
-    overflow: hidden;
-}
+
 .carousel-button-carousel-button--prev{
     position: absolute;
     background: transparent;
@@ -17,4 +16,16 @@
     background: transparent;
     right: 2%;
     top: 50%;
+}
+.carousel__image-slide{
+    display: flex;
+    overflow: hidden;
+    height: 250px;
+    text-align: center;
+}
+.img-div{
+    width: 30%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
 }
