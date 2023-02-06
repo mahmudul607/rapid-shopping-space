@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import fakeData from '../../fakeData';
 import './Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,33 +9,27 @@ const Carousel = () => {
   const [index, setIndex] = useState(0);
   const take = fakeData.slice(0, 30);
     const [product] =  useState(take)
-    const autoPlay = true;
   const images = product.map(pd => pd.img)
-  const [intervalId, setIntervalId] = useState(null);
-  const imagesLength = useRef(images.length);
-  const intervalIdRef = useRef(intervalId);
+  const autoPlay = true;
+  const [intervalId, setIntervalId] = useState(3000);
 
   const handlePrev = () => {
-    clearInterval(intervalIdRef.current);
-    setIndex(index === 0 ? imagesLength.current - 1 : index - 1);
+    setIndex(index === 0 ? images.length - 1 : index - 1);
   };
 
   const handleNext = () => {
-    clearInterval(intervalIdRef.current);
-    setIndex(index === imagesLength.current - 1 ? 0 : index + 1);
+    setIndex(index === images.length - 1 ? 0 : index + 1);
   };
 
   useEffect(() => {
-    imagesLength.current = images.length;
-    intervalIdRef.current = intervalId;
     if (autoPlay) {
       const id = setInterval(() => {
-        setIndex(index === imagesLength.current - 1 ? 0 : index + 1);
+        setIndex(index === images.length - 3 ? 0 : index + 3);
       }, 3000);
       setIntervalId(id);
     }
-    return () => clearInterval(intervalIdRef.current);
-  }, [autoPlay, index]);
+    return () => clearInterval(intervalId);
+  }, [index, autoPlay]);
 
   return (
     <div className="carousel">
@@ -50,9 +44,6 @@ const Carousel = () => {
             <div className='img-div'>
             <img src={images[index + 10]} alt="Slide 3"/>
             </div>
-          
-          
-         
         </div>
       </div>
             <div>
