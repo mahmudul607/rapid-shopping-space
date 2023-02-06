@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import fakeData from '../../fakeData';
 import './Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,26 +12,29 @@ const Carousel = () => {
     const autoPlay = true;
   const images = product.map(pd => pd.img)
   const [intervalId, setIntervalId] = useState(null);
-  
+  const imagesLength = useRef(images.length);
+  const intervalIdRef = useRef(intervalId);
 
   const handlePrev = () => {
-    clearInterval(intervalId);
-    setIndex(index === 0 ? images.length - 1 : index - 1);
+    clearInterval(intervalIdRef.current);
+    setIndex(index === 0 ? imagesLength.current - 1 : index - 1);
   };
 
   const handleNext = () => {
-    clearInterval(intervalId);
-    setIndex(index === images.length - 1 ? 0 : index + 1);
+    clearInterval(intervalIdRef.current);
+    setIndex(index === imagesLength.current - 1 ? 0 : index + 1);
   };
 
   useEffect(() => {
+    imagesLength.current = images.length;
+    intervalIdRef.current = intervalId;
     if (autoPlay) {
       const id = setInterval(() => {
-        setIndex(index === images.length - 1 ? 0 : index + 1);
+        setIndex(index === imagesLength.current - 1 ? 0 : index + 1);
       }, 3000);
       setIntervalId(id);
     }
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalIdRef.current);
   }, [autoPlay, index]);
 
   return (
