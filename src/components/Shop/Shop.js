@@ -54,9 +54,8 @@ const Shop = (props) => {
             <Row className='show-row'>
                 <Col className='reuseable-cart' lg={1} md={1} style={{ paddingTop: '20px' }}>
                     <div className='cart-section'>
+                        <div className='category-form'>
                         <h4>Category:</h4>
-                        <ul className='category'>
-                        </ul>
                         <form>
                         <input type="radio" id="html" name="fav_language" value="HTML" />
                                 <label for="html"  onClick={() => setCategory('All')}>All</label><br></br>
@@ -68,19 +67,7 @@ const Shop = (props) => {
                                 <label for="camera" onClick={() => setCategory('Camera')}>Camera</label>
                         </form>
                             
-                                                    
-
-                                                    <h3>Brands:</h3>
-                                                    <ul style={{ flexDirection: 'column' }}>
-                                                        <h4><a href="/">Nokia</a> </h4>
-
-                                                        <h4><a href="/">Dell</a> </h4>
-
-                                                        <h4><a href="/">Lenovo</a> </h4>
-
-                                                        <h4><a href="/">Canon</a> </h4>
-                                                    </ul>
-
+                        </div>
                                                     {/* <Cart cart={cart}>
                                 <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
                             </Cart> */}

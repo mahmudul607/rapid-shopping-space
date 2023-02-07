@@ -18,6 +18,7 @@ const About = () => {
                             <a href="../Shop"><FaRegHeart className='heart-icon' />R.S.S</a>
                         </div>
                     </div>
+                    <div className='text-heart'>
                     <h4>Do You know Why We best for You?</h4>
                     <ul>
                         <li>Authentic Seller Only We Allow Here</li>
@@ -25,6 +26,9 @@ const About = () => {
                         <li>Quick Delivery</li>
                         <li>Quick Response For Your Return Products</li>
                     </ul>
+                        
+                    </div>
+                    
                 </Col>
                 <Col className='Chart-section' lg={6}><Chart></Chart></Col>
             </Row>
@@ -32,7 +36,7 @@ const About = () => {
                 <Col className='contact-text'>Keep In Touch</Col>
                 <Col className='contact-method'>
                     <ul className='dropdown'>
-                        <li><button>Connect With us</button>
+                        <li className='connect-with-us-li'><button>Connect With us</button>
                             <ul className='dropdown-content'>
                                 <li><a href="/"><FaFacebook /></a></li>
                                 <li><a href="/"><FaLinkedinIn /></a></li>

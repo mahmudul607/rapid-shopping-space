@@ -123,6 +123,86 @@ body {
     transition: 2000ms;
     animation-delay: 1s;
   }
+ 
+
+  @media  (min-width: 1400px) {
+    .about-body{
+      overflow: hidden;
+    }}
+  @media  (min-width: 1200px) {
+    .about-body{
+      overflow: hidden;
+    }}
+  @media  (min-width: 992px) {
+    .about-body{
+      overflow: hidden;
+    }
+    .recharts-surface{
+      width: 90% !important;
+    }
+    .about-text .circle {
+      width: 300px;
+      height: 300px;
+    }
+    .contact-method .dropdown:hover .dropdown-content {
+      animation: hoverforcontact2 1s linear;
+      animation-fill-mode: forwards; 
+      
+     
+    }
+    
+  }
+  @media  (min-width: 768px) {
+    .about-body{
+      overflow: hidden;
+    }
+    .circle, .text-heart{
+      width: 50%;
+    }
+    .about-text {
+      display: flex;
+    }
+    .recharts-wrapper {
+      position: relative;
+      cursor: default;
+      width: 650px;
+      height: 500px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+    }
+    .contact-text {
+      text-align: left;
+      width: 25% !important;
+    }
+    .contact-method {
+      text-align: left;
+      left: 0;
+      margin-left: 0;
+      padding-left: 0;
+      width: 75% !important;
+    }
+   .col{
+      
+        flex: none;
+      
+    }
+  }
+  @media  (min-width: 576px) {
+    .about-body{
+      overflow: hidden;
+    }
+  }
+  @media  (min-width: 0) {
+    .about-body{
+      overflow: hidden;
+    }
+  }
+
+
+
+
   @keyframes mymove {
     from{
         color: red;
@@ -141,6 +221,16 @@ body {
     }
     to{
         left: 40%;
+    }
+  
+  }
+  @keyframes hoverforcontact2 {
+    from{
+       
+        left: 0;
+    }
+    to{
+      left: 50%;
     }
   
   }

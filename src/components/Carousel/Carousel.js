@@ -24,7 +24,7 @@ const Carousel = () => {
   useEffect(() => {
     if (autoPlay) {
       const id = setInterval(() => {
-        setIndex(index === images.length - 3 ? 0 : index + 3);
+        setIndex(index === images.length - 1 ? 0 : index + 1);
       }, 3000);
       setIntervalId(id);
     }
