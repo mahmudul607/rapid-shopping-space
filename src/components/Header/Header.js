@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import logo from '../../images/favi.png';
 import './Header.css';
@@ -15,19 +15,12 @@ const Header = (props) => {
   const [userName, setUserName] = useState('Login');
   const [userData, setUserData] = useState([]);
 
-
- 
-
-    
- 
- 
-  
- 
   const { cart } = props;
   const toggleLogin = () => {
     setShowLogin(!showLogin);
     setShowSignup(false);
   }
+
 
   const toggleSignup = () => {
     setShowSignup(!showSignup);
@@ -63,8 +56,8 @@ const Header = (props) => {
       const userData = { username, email, password };
       localStorage.setItem("userData", JSON.stringify(userData));
       setUserData(userData);
-      setShowSignup(false);
       setShowLogin(true);
+      setShowSignup(false);
     }
   };
   
