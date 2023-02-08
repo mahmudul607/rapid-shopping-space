@@ -35,13 +35,21 @@ const Header = (props) => {
       const username = userData.username;
       const email = e.target.elements.email.value;
       const password = e.target.elements.password.value;
-      if (username === email && userData.password === password) {
+      console.log(userData.length);
+      
+       if (username === email && userData.password === password) {
         setUserName(username);
         setShowLogin(false);
-      } else {
+      } 
+      else  {
         console.error("Incorrect email or password");
         alert("Incorrect email or password")
       }
+     
+    }
+    else {
+      console.error("Incorrect email or password");
+      alert("Please SignUp to Login")
     }
   };
   
