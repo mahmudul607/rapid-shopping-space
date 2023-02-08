@@ -29,3 +29,23 @@
 .footer-body ul li:hover a{
     color: goldenrod;
 }
+
+
+@media (min-width: 768px){
+    .footer-item{
+        width: 33.33%;
+    }
+
+
+}
+
+@media (max-width: 992px){
+    .footer-item{
+        
+        font-size: 15px;
+        z-index: 1000;
+    }
+    .footer-item h4{
+        font-size: 18px;
+    }
+}

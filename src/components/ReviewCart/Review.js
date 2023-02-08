@@ -27,8 +27,6 @@ const [cart, setCart] = useState([]);
     // cart
     const saveCart = getDatabaseCart();
     const productKeys = Object.keys(saveCart);
-
-
     const cartProducts = productKeys.map(key => {
       const product = fakeData.find(pd => pd.key === key);
       product.quantity = saveCart[key];
@@ -52,7 +50,7 @@ const [cart, setCart] = useState([]);
   return (
     <Container fluid>
       <Row>
-        <Col lg={9}>
+        <Col className='cart-item-desk'>
           <div className="product-container">
             <h1>Cart items: {cart.length}</h1>
             {
@@ -66,7 +64,7 @@ const [cart, setCart] = useState([]);
             }
           </div>
         </Col>
-        <Col><div className="cart-container">
+        <Col className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
             <button id="review-btn" onClick={placeOrder}>Place Order</button>
           </Cart>

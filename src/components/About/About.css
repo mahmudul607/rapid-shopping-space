@@ -137,9 +137,9 @@ body {
     .about-body{
       overflow: hidden;
     }
-    .recharts-surface{
+    /* .recharts-surface{
       width: 90% !important;
-    }
+    } */
     .about-text .circle {
       width: 300px;
       height: 300px;
@@ -152,7 +152,7 @@ body {
     }
     
   }
-  @media  (min-width: 768px) {
+  @media  (max-width: 768px) {
     .about-body{
       overflow: hidden;
     }

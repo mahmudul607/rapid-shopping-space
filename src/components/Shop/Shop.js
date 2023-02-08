@@ -56,7 +56,7 @@ const Shop = (props) => {
                     <div className='cart-section'>
                         <div className='category-form'>
                         <h4>Category:</h4>
-                        <form>
+                        <form className='form-items'>
                         <input type="radio" id="html" name="fav_language" value="HTML" />
                                 <label for="html"  onClick={() => setCategory('All')}>All</label><br></br>
                         <input type="radio" id="css" name="fav_language" value="CSS" />

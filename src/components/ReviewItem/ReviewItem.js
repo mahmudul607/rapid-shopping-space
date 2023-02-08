@@ -11,7 +11,7 @@ const ReviewItem = (props) => {
             <img src={img} alt="" />
            </div>
            <div className="details">
-           <h4>{name}</h4>
+           <h5>{name}</h5>
             <p>Quantity: {quantity}</p>
             <p>Price: ${price}</p>
 

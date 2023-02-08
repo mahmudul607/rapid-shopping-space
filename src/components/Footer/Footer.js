@@ -9,7 +9,7 @@ const Footer = () => {
             <Container fluid className='footer-body'>
                 <Row className='footer-logo'><img src={logo} alt="" /></Row>
                 <Row>
-                    <Col lg={4}>
+                    <Col lg={4} className='footer-item'>
                         <ul><h4>Quick Links</h4>
                             <li><a href="../Shop">Shop</a></li>
                             <li><a href="../Review">Review Your Cart</a></li>
@@ -17,7 +17,7 @@ const Footer = () => {
                             <li><a href="../About">About</a></li>
                         </ul>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} className='footer-item'>
                         <ul><h4>Connect With Us</h4>
                             <li><a href="/"><FaFacebook />  Facebook</a></li>
                             <li><a href="/"><FaLinkedinIn />  LinkedIn</a></li>
@@ -25,7 +25,7 @@ const Footer = () => {
                             <li><a href="/"><FaEnvelope/>  Email</a></li>
                         </ul>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} className='footer-item'>
                         <ul><h4>Rank</h4>
                             <li><a href="/">Rank-1 Seller</a></li>
                             <li><a href="/">Rank-2 Seller</a></li>

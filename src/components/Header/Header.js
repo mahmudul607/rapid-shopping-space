@@ -90,7 +90,7 @@ const Header = (props) => {
           </form>
         </div>
       )}
-      <Navbar key={'md'} bg="light" expand={'md'} className="mb-3" >
+      <Navbar key={'md'}  expand={'md'} className="mb-3" >
         <Container fluid>
           <Navbar.Brand href="#"><img src={logo} alt="" title="Rapid Shopping Space" /></Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${'md'}`} />
@@ -115,7 +115,7 @@ const Header = (props) => {
                 <Nav.Link href="../About">About Us</Nav.Link>
                </div>
                 <div className="user-area">
-                <div className="user" onClick={toggleLogin}><h4>{userName}Login</h4></div>
+                <div className="user" onClick={toggleLogin}>Login</div>
                 <div className="user-icon"><FaUserCircle /></div>
               </div>
               </Nav>

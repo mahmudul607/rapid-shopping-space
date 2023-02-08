@@ -1,10 +1,49 @@
 .review-item{
     padding: 5px;
     border-bottom: 1px solid lightgray;
-    padding-left: 100px;
-    width: 70%;
-    display: flex;
+    padding-left: 50px;
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 2px dotted goldenrod;
+   
+    
 }
 .review-item .details{
    padding: 10px;
+}
+.review-item img{
+    width:50%;
+}
+.review-item img:hover{
+    animation: hoverreviewimg 1s linear;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: alternate 1s;
+   
+
+
+}
+@keyframes hoverreviewimg {
+    from{
+       
+       scale: 1;
+    }
+    to{
+        scale: 1.5;
+    }
+  
+  }
+
+@media  (max-width: 575.98px){
+    .review-item{
+        padding: 2px;
+        padding-left: 10px;
+        font-size: 15px;  
+}
+.review-item h5{
+   
+    font-size: 15px;  
+}
+
+
+
 }
