@@ -141,8 +141,8 @@ body {
       width: 90% !important;
     } */
     .about-text .circle {
-      width: 300px;
-      height: 300px;
+      width: 400px;
+      height: 400px;
     }
     .contact-method .dropdown:hover .dropdown-content {
       animation: hoverforcontact2 1s linear;

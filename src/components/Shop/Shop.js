@@ -39,7 +39,7 @@ const Shop = (props) => {
             setProducts(first10)
         }
 
-    }, [category, first10]);
+    }, [category]);
 
 
 
@@ -76,7 +76,7 @@ const Shop = (props) => {
 
                                                 </Col>
                                                 <Col className='product-card' lg={10} md={10}>
-                                                    <div key={products.key}>
+                                                    <div>
                                                         <ul>
                                                             {
                                                                 products.map(product => <Product

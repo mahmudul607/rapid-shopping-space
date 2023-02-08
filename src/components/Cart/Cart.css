@@ -26,6 +26,16 @@
     text-align: center;
 }
 
-@media  (min-width: 768px) {
+@media (min-width: 0px) and (max-width: 767.98px) {
+    .Cart-Section h1, .Cart-Section h2, .Cart-Section h3, .Cart-Section h4, .Cart-Section h5, .Cart-Section h6{
+        font-size: 15px;
+    }
   
+}
+
+
+@media  (min-width: 575.98px){
+    .Cart-Section{
+        font-size: 12px;
+    }
 }

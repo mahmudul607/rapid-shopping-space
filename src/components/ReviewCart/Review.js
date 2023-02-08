@@ -50,7 +50,7 @@ const [cart, setCart] = useState([]);
   return (
     <Container fluid>
       <Row>
-        <Col className='cart-item-desk'>
+        <div className='cart-item-desk'>
           <div className="product-container">
             <h1>Cart items: {cart.length}</h1>
             {
@@ -63,12 +63,12 @@ const [cart, setCart] = useState([]);
               thankyou
             }
           </div>
-        </Col>
-        <Col className='cart-desk'><div className="cart-container">
+        </div>
+        <div className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
             <button id="review-btn" onClick={placeOrder}>Place Order</button>
           </Cart>
-        </div></Col>
+        </div></div>
 
       </Row>
     </Container>

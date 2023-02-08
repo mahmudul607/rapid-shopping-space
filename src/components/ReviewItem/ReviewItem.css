@@ -12,7 +12,7 @@
    padding: 10px;
 }
 .review-item img{
-    width:50%;
+    width:25%;
 }
 .review-item img:hover{
     animation: hoverreviewimg 1s linear;
@@ -31,6 +31,23 @@
         scale: 1.5;
     }
   
+  }
+  @media  (min-width: 575.98px){
+    .review-item{
+        font-size: 15px;
+
+    }
+    .review-item h5{
+   
+        font-size: 15px;  
+    }
+    .review-item{
+        padding: 2px;
+        padding-left: 10px;
+        font-size: 15px;  
+}
+   
+
   }
 
 @media  (max-width: 575.98px){

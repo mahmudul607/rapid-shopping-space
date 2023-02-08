@@ -1,6 +1,16 @@
 .cart-item-desk{
-    width:65%;
+    width:65% !important;
 }
 .cart-desk{
-    width: 35%;
+    width: 35% !important;
+}
+@media (max-width:575.98px) {
+    .cart-item-desk{
+        width:100% !important;
+    }
+    .cart-desk{
+        width: 100% !important;
+    }
+
+    
 }

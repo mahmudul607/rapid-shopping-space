@@ -1,3 +1,7 @@
+
+
+
+
 const getUser = () => {
     const existingUser = localStorage.getItem('userId');
     if (existingUser) {
@@ -12,7 +16,7 @@ const getUser = () => {
 
 const getDataKey = () => {
     const userId = getUser();
-    return `emaJohn/carts/${userId}`
+    return `rapid/carts/${userId}`
 }
 
 // push to local storage: a temporary place for database

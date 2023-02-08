@@ -87,9 +87,10 @@ nav a {
 .user-area{
     width: 20%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     
 }
+
 .user-area .user{
     margin: auto;
     cursor: pointer;
@@ -100,6 +101,9 @@ nav a {
     color: gray;
     font-size: 30px; 
       
+}
+.user-icon:hover{
+    cursor: pointer;
 }
 
 @media (min-width: 576px) {
