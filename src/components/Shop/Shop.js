@@ -35,7 +35,7 @@ const Shop = (props) => {
             setProducts(first10)
         }
 
-    }, [category]);
+    }, [category, first10]);
 
 
 

@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaHeart, FaSearchPlus, FaThumbsUp, FaWindowClose } from 'react-icons/fa';
-import fakeData from '../../fakeData';
+import { FaHeart, FaSearchPlus, FaWindowClose } from 'react-icons/fa';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
 
@@ -75,14 +74,13 @@ const Product = (props) => {
           </div>
           <div className='product-modal-btn-area2'>
             <button className='product-details-btn product-hover-btn'>
-              <FaHeart style={{color:'gray'}} />
+              <FaHeart/>
             </button>
             {props.showAddToCart === true && (
               <button
                 className='product-hover-btn'
-                onClick={handelLike()}
               >
-                <ThumbUpAltIcon onClick={handelLike}></ThumbUpAltIcon>
+                <ThumbUpAltIcon onClick={handelLike} color={likeColor} ></ThumbUpAltIcon>
               </button>
             )}
           </div>
