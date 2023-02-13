@@ -1,42 +1,164 @@
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 
-.add-to-cart-btn{
-    background-color: goldenrod;
-    width: 160px;
-    height: 40px;
-    border: 1px solid burlywood;
-    border-radius: 5px;
+  }
+  
+  .product-modal-content {
+    background-color: white;
+    padding: 0;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000;
+    position: absolute;
+  }
+  
+  .product-modal-btn-area {
+	position: absolute;
+	bottom: -16%;
+    left: -2%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;	
+}
+  .product-modal-btn-area2 {
+	position: absolute;
+	bottom: -16%;
+    right: -2%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;	
+}
+.product-modal-btn-area{
+    display: none; 
+}
+.cart{
+    position:relative;
+    border-radius: 25px !important;
+    
+}
+.cart:hover .product-modal-btn-area{
+    display: block !important;
+
+
+}
+.product-modal-btn-area .product-hover-btn{
+    position: relative;
+    right: 0;
+
+}
+ 
+.product-hover-btn {
+	color: black;
+	font-weight: 700;
+	margin-bottom: 0%;
+	width: 40px;
+	height: 40px;
+	border: 1px solid burlywood;
+	border-radius: 50%;
+	margin-right: 2%;
+}
+.product-hover-btn:hover{
+    background: goldenrod;
 }
 .image {
-	width: 100% !important;
-    overflow: hidden !important;
+    position: relative;
+	width: 100%;
     text-align: center;
+    padding: 5%;
+}
+.image:hover .card-img{
+    scale: 1.1;
+    transition: 1000ms;
 }
 .image .card-img{
-    width: 60% !important;
+    width: 65% !important;
     margin: auto;
-    padding: auto;
+
 }
-.list-group-flush > .list-group-item {
-	border-width: 0 0 var(--bs-list-group-border-width);
-	padding: 0;
-    border: none;
-    padding-left: 2% !important;
+.cart small p{
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-decoration: none;
+        
 }
-.card-footer {
-	margin: auto;
-}
-.card-title {
-	text-transform: capitalize;
-    background-color:gray;
-    padding: 2px;
+.cart small:hover p{
+    color: goldenrod;
 }
 
-.card-img:hover{
-    transform: scale(2);
-    transition: 900ms;
+.list-group-flush > .list-group-item {
+	border-width: 0 0 var(--bs-list-group-border-width);
+    font-size: 15px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: goldenrod;
+
+
+}
+.list-group-flush> .list-group-item:hover  {
+    background: rgb(243, 199, 89, 0.3)
+}
+
+.card-title {
+	text-transform: capitalize;
+    padding: 2px;
+    text-align: center;
+}
+
+
+.image:hover .card-img::after {
+    content: "Love";
+    position: relative;;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    z-index: 1200;
+    top: 10%;
+    background-color: red;
+    
+
+   
 }
 .card:hover{
     box-shadow: 5px 10px 8px lightgray;
+}
+.add-to-cart-btn{
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    position: relative;
+    margin: auto;
+    bottom: 0;
+    background: transparent;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    border: 1px solid gray;
+   
+}
+.add-to-cart-btn p {
+	padding: 8px;
+	margin: auto;
+    
+}
+.add-to-cart-btn:hover{
+    box-shadow: 5px 10px 8px lightgray;
+    background-color: goldenrod;
 }
 
 @media (min-width: 992px) {

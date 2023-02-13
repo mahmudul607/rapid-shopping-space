@@ -7,7 +7,7 @@ import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
 import thankYou from '../../images/thank-you-thanks.gif';
-import { Col, Container, Row } from 'react-bootstrap';
+import {Container, Row } from 'react-bootstrap';
 
 
 

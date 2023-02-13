@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import logo from '../../images/favi.png';
 import './Header.css';
@@ -7,13 +7,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FaUserCircle } from "react-icons/fa";
 import CircleCart from '../CircleCart/CircleCart';
+import { addToDatabaseUser, getUserDatabase } from '../../utilities/databaseManager';
+
+
 
 
 const Header = (props) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
-  const [userName, setUserName] = useState('Login');
+  const [userName, setUserName] = useState('My Account');
   const [userData, setUserData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+
 
   const { cart } = props;
   const toggleLogin = () => {
@@ -27,32 +33,32 @@ const Header = (props) => {
     setShowLogin(false);
   }
 
+
   const handleLogin = (e) => {
     e.preventDefault();
-    const storedUserData = localStorage.getItem('userData');
+    const storedUserData = getUserDatabase();
     if (storedUserData) {
       const userData = JSON.parse(storedUserData);
       const username = userData.username;
       const email = e.target.elements.email.value;
       const password = e.target.elements.password.value;
-      console.log(userData.length);
-      
-       if (username === email && userData.password === password) {
+
+      if (username === email && userData.password === password) {
         setUserName(username);
         setShowLogin(false);
-      } 
-      else  {
+      }
+      else {
         console.error("Incorrect email or password");
         alert("Incorrect email or password")
       }
-     
+
     }
     else {
       console.error("Incorrect email or password");
       alert("Please SignUp to Login")
     }
   };
-  
+
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -63,12 +69,14 @@ const Header = (props) => {
     if (username && email && password && password === confirmPassword) {
       const userData = { username, email, password };
       localStorage.setItem("userData", JSON.stringify(userData));
-      setUserData(userData);
-      setShowLogin(true);
+      
+      setShowLogin(false);
       setShowSignup(false);
     }
+    addToDatabaseUser(username, password, email);
+
   };
-  
+
 
   return (
     <>
@@ -79,9 +87,9 @@ const Header = (props) => {
             <input type="text" id='email' placeholder="Username or Email" required />
             <input type="password" id='password' placeholder="Password" required />
             <div className='log-area'>
-            <button type="submit">Login</button>
-            <button type="button" onClick={toggleSignup}>Sign Up</button>
-            <button type="button" onClick={toggleLogin}>Cancel</button>
+              <button type="submit">Login</button>
+              <button type="button" onClick={toggleSignup}>Sign Up</button>
+              <button type="button" onClick={toggleLogin}>Cancel</button>
 
             </div>
           </form>
@@ -96,50 +104,88 @@ const Header = (props) => {
             <input type="password" id='password' placeholder="Password" required />
             <input type="password" id='confirmPassword' placeholder="Confirm Password" required />
             <div className='log-area'>
-            <button type="submit">Sign Up</button>
-            <button type="button" onClick={toggleSignup}>Cancel</button>
+              <button type="submit">Sign Up</button>
+              <button type="button" onClick={toggleSignup}>Cancel</button>
             </div>
           </form>
         </div>
       )}
-      <Navbar key={'md'}  expand={'md'} className="mb-3" >
-        <Container fluid>
-          <Navbar.Brand href="#"><img src={logo} alt="" title="Rapid Shopping Space" /></Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${'md'}`} />
-           <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-${'md'}`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-${'md'}`}
-            placement="end"
-            backdrop={true}
-            scroll={true}
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${'md'}`}>
-              <img src={logo} alt="" title="Rapid Shopping Space" />
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-2">
-               <div className='nav-items'>
-               <Nav.Link href="../Shop">Shop</Nav.Link>
-                <Nav.Link href="../Review">Order Review</Nav.Link>
-                <Nav.Link href="/Manage">Manage Inventory</Nav.Link>
-                <Nav.Link href="../About">About Us</Nav.Link>
-               </div>
-                <div className="user-area">
-                <div className="user" onClick={toggleLogin}>{userName}</div>
-                <div className="user-icon" onClick={toggleLogin}><FaUserCircle /></div>
-              </div>
-              </Nav>
-              
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>
-      <CircleCart cart={cart}></CircleCart>
+      <Container className='header-body' fluid>
+        <div className='header-top'>
+          <div className='left-side top-bar'><p>Welcome visitor you can login or create an account.</p></div>
+          <div className='right-side top-bar'>
+            <ul>
+              <li><FaUserCircle style={{color:'black', top:0}} />  {userName}</li>
+              <li>checkout</li>
+              <li><div className="user" onClick={toggleLogin}>Login</div></li>
+            </ul>
+          </div>
+        </div>
+        <div className='second-top-bar'>
+          <div className='logo-area'><img src={logo} alt="" title="Rapid Shopping Space" /></div>
+          <div className='search-area'>
+            <div className='search-category'>
+              <ul className="dropdown">
+                <li onClick={() => setIsOpen(!isOpen)}>
+                  Category
+                  {isOpen && (
+                    <ul className="dropdown-menu">
+                      <li>Option 1</li>
+                      <li>Option 2</li>
+                      <li>Option 3</li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            </div>
+            <div className='search-input-key'>
+            <input className='search-input' type="text" id="fname" name="fname" placeholder='Search'></input>
+            </div>
+            <div className='search-btn'>
+            <h6 type="Search">Search</h6>
+            </div>
+            
+            
+          </div>
+          <div className='cart-area'>cart</div>
+
+        </div>
+        <Navbar key={'md'} expand={'md'} className="mb-3" >
+          <Container fluid>
+            <Navbar.Brand href="#"></Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${'md'}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${'md'}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${'md'}`}
+              placement="start"
+              backdrop={true}
+              scroll={true}
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${'md'}`}>
+                  <img src={logo} alt="" title="Rapid Shopping Space" />
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-2">
+                  <div className='nav-items'>
+                    <Nav.Link href="../Home">Home</Nav.Link>
+                    <Nav.Link href="../Shop">Shop</Nav.Link>
+                    <Nav.Link href="../Review">Order Review</Nav.Link>
+                    <Nav.Link href="/Manage">Manage Inventory</Nav.Link>
+                    <Nav.Link href="../About">About Us</Nav.Link>
+                  </div>
+                </Nav>
+
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+        <CircleCart cart={cart}></CircleCart>
+      </Container>
     </>
   );
 }
 
 export default Header;
-         
+

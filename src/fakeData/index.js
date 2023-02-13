@@ -3,6 +3,7 @@ import cameras from './camera';
 import laptops from './laptop';
 import television from './television';
 
+
 const fakeData = [...androids, ...cameras, ...laptops, ...television];
 
 

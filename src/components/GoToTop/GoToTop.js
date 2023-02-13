@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
-
+import './GoToTop.css'
 
 function GoToTop() {
   const [showButton, setShowButton] = useState(false);
@@ -26,7 +26,7 @@ function GoToTop() {
   return (
     <>
       {showButton && (
-        <div onClick={handleClick} style={{ position: "fixed", bottom: 0, right: 30, height:'40px',width:'40px' }}>
+        <div className="gotoTop-res" onClick={handleClick} style={{ position: "fixed", bottom: 0, right: 30, height:'40px',width:'40px' }}>
          <FontAwesomeIcon style={{color:'greenYellow',fontSize:'30px' }} icon={faArrowCircleUp} />
         </div>
       )}

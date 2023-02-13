@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import './CircleCart.css'
 
 const BottomFixedCart = (props) => {
   const {cart} = props;
@@ -68,15 +69,15 @@ const BottomFixedCart = (props) => {
   }
 
   return (
-    <div style={{ position: "fixed", bottom: "10%", width: "300px" , right:0, zIndex:100}}>
+    <div className='circle-cart-body' style={{ position: "fixed", bottom: "10%", width: "300px" , right:0, zIndex:100}}>
       {isExpanded && (
-        <div style={{height:'250px', width:'300px', padding:'5%', paddingTop:'10%'}}>
+        <div className='circle-cart-details' style={{height:'250px', width:'300px', padding:'5%', paddingTop:'10%'}}>
           <Cart cart={cart}></Cart>
         </div>
       )}
-      <div onClick={() => setIsExpanded(!isExpanded)} style={{paddingBottom:0, paddingTop:'32%'}}>
-      {isExpanded ? <div> <Link to="/Review"><button style={reviewStyle}>Review your Order</button></Link><button style={CartIconStyle}>Close</button> </div>
-      : <span><h1 style={CartIconStyle2}>{qq}</h1>
+      <div className='circle-cart-btn' onClick={() => setIsExpanded(!isExpanded)} style={{paddingBottom:0, paddingTop:'32%'}}>
+      {isExpanded ? <div> <Link to="/Review"><button className='circle-review-btn' style={reviewStyle}>Review your Order</button></Link><button className='circle-close-btn' style={CartIconStyle}>Close</button> </div>
+      : <span><h1 className='cart-item-count' style={CartIconStyle2}>{qq}</h1>
         <button style={CartIconStyle1}>
         <FontAwesomeIcon icon={faShoppingCart} />
     </button></span>

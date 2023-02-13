@@ -32,18 +32,18 @@ const About = () => {
                 </Col>
                 <Col className='Chart-section' lg={6}><Chart></Chart></Col>
             </Row>
-            <Row>
+            <Row className='social-ico'>
                 <Col className='contact-text'>Keep In Touch</Col>
                 <Col className='contact-method'>
                     <ul className='dropdown'>
-                        <li className='connect-with-us-li'><button>Connect With us</button>
+                        <h6 className='connect-with-us-li'><button>Connect With us</button>
                             <ul className='dropdown-content'>
                                 <li><a href="/"><FaFacebook /></a></li>
                                 <li><a href="/"><FaLinkedinIn /></a></li>
                                 <li><a href="/"><FaEnvelope /></a></li>
                                 <li><a href="/" title='01797692607'><FaPhone /></a></li>
                             </ul>
-                        </li>
+                        </h6>
 
                     </ul>
                 </Col>

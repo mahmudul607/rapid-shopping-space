@@ -137,6 +137,9 @@ body {
     .about-body{
       overflow: hidden;
     }
+    .about-text {
+      flex-direction: column;
+    }
     /* .recharts-surface{
       width: 90% !important;
     } */
@@ -152,7 +155,7 @@ body {
     }
     
   }
-  @media  (max-width: 768px) {
+  @media  (min-width: 768px) {
     .about-body{
       overflow: hidden;
     }
@@ -166,7 +169,7 @@ body {
       position: relative;
       cursor: default;
       width: 650px;
-      height: 500px;
+      height: 6500px;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -189,15 +192,79 @@ body {
       
     }
   }
-  @media  (min-width: 576px) {
+  @media  (min-width: 250px) and (max-width: 576px) {
     .about-body{
       overflow: hidden;
+    }
+    .about-text .circle {
+      width: 250px;
+      height: 250px;
     }
   }
-  @media  (min-width: 0) {
+  @media  (max-width: 249.98px) {
     .about-body{
       overflow: hidden;
     }
+    .about-text .circle {
+      width: 150px;
+      height: 150px;
+    }
+    .about-text .circle h1 {
+      padding: 11%;
+      font-size: 12px;
+    }
+    .about-text .circle .love a .heart-icon {
+     
+      font-size: 32px;
+      
+    }
+    .about-text .circle .love {
+      top: -3px;
+      left: 34%;
+    }
+    .text-heart h4, .text-heart ul li{
+      font-size: 11px;
+
+    }
+    .contact-method ul li, .contact-text {
+      font-size: 11px;
+      text-align: left;
+    }
+    .social-ico .col{
+      width: 100%;
+    }
+    .social-ico{
+      display: flex;
+      flex-direction: column;
+    }
+    .h6, h6 {
+      font-size: 10px;
+    }
+    .social-ico .dropdown{
+      padding-left: 0;
+    }
+    .footer h4, .footer li{
+      font-size: 10px;
+    }
+    .footer-body .footer-logo img {
+      width: 50%;
+    }
+    .Cart-Section h2, .Cart-Section h3, .Cart-Section h4, .Cart-Section h5, .Cart-Section h6{
+      font-size: 10px;
+    }
+    .circle-cart-body, .circle-cart-details{
+      width: 150px !important;
+    }
+    .circle-cart-btn{
+      width: 100%;
+    }
+    .circle-review-btn{
+        margin-top: -33px !important;
+        right: 64px !important;
+        font-size: 10px;
+     
+    }
+    
   }
 
 

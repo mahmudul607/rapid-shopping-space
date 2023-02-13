@@ -3,29 +3,44 @@
 
 
 const getUser = () => {
-    const existingUser = localStorage.getItem('userId');
+    const existingUser = localStorage.getItem('userData');
     if (existingUser) {
-        return existingUser; 
-    } else {
-        const newUser = 'user-' + new Date().getTime();
-        localStorage.setItem('userId', newUser)
-        return newUser;
-    }
+      const userData = JSON.parse(existingUser);
+      const username = userData.username;
+      return username;
+    } 
+}
+const getUserDataKey =() => {
+  const dataOfUser = getUser();
+  return `rapid/user/${dataOfUser}`
 }
 
-
 const getDataKey = () => {
-    const userId = getUser();
-    return `rapid/carts/${userId}`
+    const userData = getUser();
+    return `rapid/carts/${userData}`
 }
 
 // push to local storage: a temporary place for database
+
+// for user
+const getUserDatabase = () =>{
+  const userDataKey = getUserDataKey();
+  const data = localStorage.getItem(userDataKey) || "{}";
+  return JSON.parse(data);
+}
+// for cart
 const getDatabaseCart = () => {
     const dataKey = getDataKey();
-    const data = localStorage.getItem(dataKey) || "{}";
+      const data = localStorage.getItem(dataKey) || "{}";
     return JSON.parse(data);
 }
-
+//for user
+const addToDatabaseUser = (key, password, email) => {
+    const currentUser = getUserDatabase();
+    currentUser[key] = password;
+    localStorage.setItem(getUserDataKey(), JSON.stringify(currentUser));
+}
+// for cart
 const addToDatabaseCart = (key, count) => {
     const currentCart = getDatabaseCart();
     currentCart[key] = count;
@@ -43,7 +58,7 @@ const clearLocalShoppingCart = (cart) => {
 }
 
 
-export { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, clearLocalShoppingCart};
+export { addToDatabaseCart, addToDatabaseUser, getDatabaseCart, getUserDatabase, removeFromDatabaseCart, clearLocalShoppingCart};
 
 
 // polyfill to support older browser

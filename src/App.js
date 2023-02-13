@@ -11,10 +11,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import { addToDatabaseCart, getDatabaseCart } from './utilities/databaseManager';
 import fakeData from './fakeData';
 import GoToTop from './components/GoToTop/GoToTop';
-
-
-
-
+import Home from './components/Home/Home';
 export const CategoryContext = createContext();
 
 
@@ -35,6 +32,10 @@ function App() {
 }, []);
 
 const handelAddToCart = (product) => {
+  // const existingUser = localStorage.getItem('userData');
+  // if(existingUser === undefined){
+  //   alert('Please Sign')
+  // }
   const sameProduct = cart.find(pd => pd.key === product.key);
   let count = 1;
   let newCart;
@@ -47,11 +48,10 @@ const handelAddToCart = (product) => {
   else {
       product.quantity = 1;
       newCart = [...cart, product];
+      
   }
-
   setCart(newCart);
   addToDatabaseCart(product.key, count);
-
 }
 
 //add end
@@ -64,11 +64,12 @@ const handelAddToCart = (product) => {
         <Header cart={cart}></Header>
         
       <Routes>
+        <Route path="/Home" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/> 
         <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
         <Route path="/Review" element={<Review></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
         <Route path="/About" element={<About></About>}/> 
-        <Route exact path="/" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/>
+        <Route exact path="/" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
       </Routes>

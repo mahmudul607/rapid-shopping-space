@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import Product from '../Product/Product';
@@ -10,15 +9,12 @@ import ManageBar from '../ManageBar/ManageBar';
 import { CategoryContext } from '../../App';
 import Carousel from '../Carousel/Carousel';
 
-
-
-
-
-
 const Shop = (props) => {
     const [category, setCategory] = useContext(CategoryContext);
 
     const { cart, handelAddToCart } = props;
+   
+    const [showProductModal, setShowProductModal] = useState(false);
 
 
 
@@ -55,48 +51,57 @@ const Shop = (props) => {
                 <Col className='reuseable-cart' lg={1} md={1} style={{ paddingTop: '20px' }}>
                     <div className='cart-section'>
                         <div className='category-form'>
-                        <h4>Category:</h4>
-                        <form className='form-items'>
-                        <input type="radio" id="html" name="fav_language" value="HTML" />
-                                <label for="html"  onClick={() => setCategory('All')}>All</label><br></br>
-                        <input type="radio" id="css" name="fav_language" value="CSS" />
+                            <h4>Category:</h4>
+                            <form className='form-items'>
+                                {/* <input type="radio" id="html" name="fav_language" value="HTML" /> */}
+                                <label for="html" onClick={() => setCategory('All')}>All</label><br></br>
+                                {/* <input type="radio" id="css" name="fav_language" value="CSS" /> */}
                                 <label for="css" onClick={() => setCategory('Laptop')}>Laptop</label><br></br>
-                        <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                                {/* <input type="radio" id="javascript" name="fav_language" value="JavaScript" /> */}
                                 <label for="javascript" onClick={() => setCategory('Android')}>Mobile</label><br></br>
-                        <input type="radio" id="camera" name="fav_language" value="Camera"/>
+                                {/* <input type="radio" id="camera" name="fav_language" value="Camera" /> */}
                                 <label for="camera" onClick={() => setCategory('Camera')}>Camera</label>
-                        </form>
-                            
+                                {/* <input type="radio" id="watch" name="fav_language" value="watch" /> */}
+                                <label for="watch" onClick={() => setCategory('watch')}>Watch</label>
+                            </form>
+
                         </div>
-                                                    {/* <Cart cart={cart}>
+                        {/* <Cart cart={cart}>
                                 <Link to="/Review"><button id='review-btn'>Review your Order</button></Link>
                             </Cart> */}
-                                                </div>
+                    </div>
+                  
 
 
-                                                </Col>
-                                                <Col className='product-card' lg={10} md={10}>
-                                                    <div>
-                                                        <ul>
-                                                            {
-                                                                products.map(product => <Product
-                                                                    showAddToCart={true}
-                                                                    cart={cart}
-                                                                    product={product}
-                                                                    handelAddToCart={handelAddToCart}
-                                                                    key={product.key}
+                </Col>
+                <Col className='product-card' lg={10} md={10}>
+                    <div>
+                    
+                       
+                   
 
-                                                                >
-                                                                </Product>)
-                                                            }
-                                                        </ul>
-                                                    </div>
-                                                </Col>
+                        <ul>
+                            {
+                                products.map(product => <Product
+                                    showAddToCart={true}
+                                    cart={cart}
+                                    product={product}
+                                    showProductModal={showProductModal}
+                                    setShowProductModal={setShowProductModal}
+                                    handelAddToCart={handelAddToCart}
+                                    key={product.key}
 
-                                            </Row>
-                                            <Footer></Footer>
+                                >
+                                </Product>)
+                            }
+                        </ul>
+                    </div>
+                </Col>
 
-                                        </Container>
+            </Row>
+            <Footer></Footer>
+
+        </Container>
 
 
 
@@ -106,7 +111,8 @@ const Shop = (props) => {
 
 
 
-                                        );
+
+    );
 };
 
-                                        export default Shop;
+export default Shop;

@@ -1,3 +1,9 @@
 .pieChart-body{
    padding-left: 2px;
+   width: 100% !important;
+   height: 100% !important;
+}
+.recharts-surface{
+   width: 100% !important;
+   height: 100% !important;
 }
