@@ -66,7 +66,7 @@ const [cart, setCart] = useState([]);
         </div>
         <div className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
-            <button id="review-btn" onClick={placeOrder}>Place Order</button>
+            <button id="review-btn" onClick={placeOrder} style={{position:'fixed', zIndex:'1000'}}>Place Order</button>
           </Cart>
         </div></div>
 

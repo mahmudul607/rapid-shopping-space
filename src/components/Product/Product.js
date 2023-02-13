@@ -7,16 +7,27 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaHeart, FaSearchPlus, FaWindowClose } from 'react-icons/fa';
+import {FaSearchPlus, FaWindowClose } from 'react-icons/fa';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { pink, red } from '@mui/material/colors';
 
 
 const Product = (props) => {
   const product =props.product
-  const { name, img, seller, price, stock, key, category, star } = product;
+  const { name, img, price, key, category} = product;
   const [showProductModal, setShowProductModal] = useState(false);
   const [modalProduct, setModalProduct] = useState(null);
   const [likeColor, setLikeColor] = useState('');
+  const [favoriteColor, setFavoriteColor] = useState('');
+
+  
+  
+  const handelFavorite = () =>{ 
+   
+    const color1 = favoriteColor? '' :  red[700];
+    setFavoriteColor(color1);
+  }
 
   const handelLike = () => {
     
@@ -74,7 +85,7 @@ const Product = (props) => {
           </div>
           <div className='product-modal-btn-area2'>
             <button className='product-details-btn product-hover-btn'>
-              <FaHeart/>
+              <FavoriteIcon onClick={handelFavorite} sx={{ color: favoriteColor }} ></FavoriteIcon>
             </button>
             {props.showAddToCart === true && (
               <button
