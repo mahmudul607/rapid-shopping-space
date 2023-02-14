@@ -17,7 +17,10 @@
     width: 20%;
 }
 .footer-body {
-    background: rgb(225, 255, 166);
+    background-image: url(../../images/footer-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
     width: 100%;
     padding: 5%;

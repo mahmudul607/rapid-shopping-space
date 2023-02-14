@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import logo from '../../images/favi.png';
+import logo from '../../images/favi-lg.png';
 import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -139,7 +139,9 @@ const Header = (props) => {
           </div>
         </div>
         <div className='second-top-bar'>
-          <div className='logo-area'><img src={logo} alt="" title="Rapid Shopping Space" /></div>
+          <div className='logo-area'><img src={logo} alt="" title="Rapid Shopping Space" />
+          <h5 style={{color:'white', fontWeight:'700', fontStyle:'italic', textShadow:'2px 1px 1px', letterSpacing: '2px'}}>Rapid Shopping Space</h5>
+          </div>
           <div className='search-area'>
             <div className='search-category'>
               <ul className="dropdown">
@@ -181,6 +183,7 @@ const Header = (props) => {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${'md'}`}>
                   <img src={logo} alt="" title="Rapid Shopping Space" />
+                  <h3>Rapid Shopping Space</h3>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
