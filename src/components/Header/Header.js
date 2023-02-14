@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import logo from '../../images/favi.png';
 import './Header.css';
@@ -8,6 +8,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FaUserCircle } from "react-icons/fa";
 import CircleCart from '../CircleCart/CircleCart';
 import { addToDatabaseUser, getUserDatabase } from '../../utilities/databaseManager';
+
+
 
 
 
@@ -76,6 +78,21 @@ const Header = (props) => {
     addToDatabaseUser(username, password, email);
 
   };
+  
+  useEffect(() => {
+    const cartDesk = document.getElementById('nav-scroll');
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.2) {
+        cartDesk.classList.add('sticky-top');
+      } else {
+        cartDesk.classList.remove('sticky-top');
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   return (
@@ -150,7 +167,7 @@ const Header = (props) => {
           <div className='cart-area'>cart</div>
 
         </div>
-        <Navbar key={'md'} expand={'md'} className="mb-3" >
+        <Navbar id='nav-scroll' key={'md'} expand={'md'} className="mb-3" >
           <Container fluid>
             <Navbar.Brand href="#"></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${'md'}`} />

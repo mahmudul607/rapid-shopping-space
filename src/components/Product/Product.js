@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {FaSearchPlus, FaWindowClose } from 'react-icons/fa';
+import {FaSearchPlus} from 'react-icons/fa';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { pink, red } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
+import ModalContent from '../ModalContent/ModalContent';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const Product = (props) => {
@@ -50,17 +52,18 @@ const Product = (props) => {
       {showProductModal && (
         <div className="product-modal">
           <div className="product-modal-content">
-            <div onClick={handelModalProductClose}>
-            <FaWindowClose/>
+            <div className='modal-close-btn' onClick={handelModalProductClose}>
+            <CloseIcon />
             </div>
             <div className='modal-content-body'>
-              <div className='modal-product-img'>
+              {/* <div className='modal-product-img'>
                 <img src={modalProduct.img} alt=""></img>
               </div>
               <div className='modal-product-info'>
                 <Card.Title>{modalProduct.name}</Card.Title>
 
-              </div>
+              </div> */}
+              <ModalContent modal={modalProduct} handelAddToCart={props.handelAddToCart} showAddToCart={props.showAddToCart}></ModalContent>
               
             </div>
           </div>

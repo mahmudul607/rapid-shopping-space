@@ -1,5 +1,19 @@
 /* header style here */
-
+@keyframes navDrop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  #nav-scroll.sticky-top {
+    animation-name: navDrop;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+  
 /* search btn style */
 .search-area .search-btn{
     position: absolute;

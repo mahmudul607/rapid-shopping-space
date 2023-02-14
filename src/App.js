@@ -66,7 +66,7 @@ const handelAddToCart = (product) => {
       <Routes>
         <Route path="/Home" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/> 
         <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
-        <Route path="/Review" element={<Review></Review>}/> 
+        <Route path="/Review" element={<Review handelAddToCart={handelAddToCart}></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
         <Route path="/About" element={<About></About>}/> 
         <Route exact path="/" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/>
