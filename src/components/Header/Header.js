@@ -169,7 +169,7 @@ const Header = (props) => {
           <div className='cart-area'>cart</div>
 
         </div>
-        <Navbar id='nav-scroll' key={'md'} expand={'md'} className="mb-3" >
+        <Navbar id='nav-scroll' key={'md'} expand={'md'} className="" >
           <Container fluid>
             <Navbar.Brand href="#"></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${'md'}`} />

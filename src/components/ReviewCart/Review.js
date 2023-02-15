@@ -9,6 +9,9 @@ import './Review.css';
 import thankYou from '../../images/thank-you-thanks.gif';
 import {Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+
+
 
 
 
@@ -75,11 +78,19 @@ const [cart, setCart] = useState([]);
     thankyou = <img src={thankYou} alt="thankyou" />
 
   }
+  const footerRef = useRef(null);
+
   useEffect(() => {
     const cartDesk = document.getElementById('card-desk1');
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight * 0.2) {
-        cartDesk.classList.add('sticky-top-cart');
+        const footerTop = footerRef.current.getBoundingClientRect().top;
+        if (footerTop > window.innerHeight) {
+          cartDesk.classList.add('sticky-top-cart');
+        } else {
+          cartDesk.classList.remove('sticky-top-cart');
+          cartDesk.style.top = `${footerTop - cartDesk.offsetHeight}px`;
+        }
       } else {
         cartDesk.classList.remove('sticky-top-cart');
       }
@@ -88,11 +99,11 @@ const [cart, setCart] = useState([]);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [footerRef]);
 
   return (
     <Container fluid>
-      <Row>
+      <Row className='review-product area'>
         <div className='cart-item-desk'>
           <div className="product-container">
             <h1>Cart items: {cart.length}</h1>
@@ -111,12 +122,17 @@ const [cart, setCart] = useState([]);
         </div>
         <div id='card-desk1'   className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
-            <button id="review-btn" onClick={placeOrder} style={{position:'fixed', zIndex:'2000'}}>Place Order</button>
-            <button className="review-btn cart-to-shop" type="" style={{position:'fixed', zIndex:'1000'}}><Link to="/Shop" >Choose More</Link></button>
+            <button id="review-btn" onClick={placeOrder} style={{position:'relative', zIndex:'500'}}>Place Order</button>
+            <button className="review-btn cart-to-shop" type="" style={{ position:'relative', zIndex:'500'}}><Link to="/Shop" >Choose More</Link></button>
           </Cart>
         </div></div>
-
+       
       </Row>
+      
+    <div>
+      <Footer style={{position:'relative'}}></Footer>
+    </div>
+     
     </Container>
 
   );

@@ -74,14 +74,14 @@ const Product = (props) => {
         <div className="image">
           <Card.Img className='card-img' variant="top" src={img} />
           <div className='product-modal-btn-area'>
-            <button className='product-details-btn product-hover-btn' title='Click To See' onClick={() => handelModalProduct(product)}>
+            <button className='product-details-btn product-hover-btn quickViewIcon' title='Click To See' onClick={() => handelModalProduct(product)}>
               <FaSearchPlus />
             </button>
             {props.showAddToCart === true && (
               <button
-                className='product-hover-btn'
+                className='product-hover-btn add-to-cart-icon'
                 onClick={() => props.handelAddToCart(props.product)}
-              title='Add to Cart'>
+>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </button>
             )}

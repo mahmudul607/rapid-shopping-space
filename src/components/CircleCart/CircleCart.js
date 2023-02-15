@@ -27,7 +27,7 @@ const BottomFixedCart = (props) => {
     zIndex:'110', 
     bottom:0, 
     position:'absolute', 
-    background:'green', 
+    background:'lightblue', 
     textAlign:'center',
     right:'10%',
     height:'50px',

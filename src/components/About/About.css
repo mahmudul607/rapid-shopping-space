@@ -23,6 +23,7 @@ body {
     text-align: left;
     
 }
+
 .contact-method ul li, .contact-text{
     font-size: 25px;
 }
@@ -68,6 +69,7 @@ body {
     border: 1px solid sandybrown;
     background: sandybrown;
     border-radius: 10px;
+    padding: 2%;
   }
  
   li{
@@ -155,7 +157,7 @@ body {
     }
     
   }
-  @media  (min-width: 768px) {
+  @media  (max-width: 768px) {
     .about-body{
       overflow: hidden;
     }
@@ -177,7 +179,7 @@ body {
     }
     .contact-text {
       text-align: left;
-      width: 25% !important;
+      width: 25% ;
     }
     .contact-method {
       text-align: left;
@@ -192,7 +194,9 @@ body {
       
     }
   }
-  @media  (min-width: 250px) and (max-width: 576px) {
+ 
+
+  @media  (max-width: 575.98px) {
     .about-body{
       overflow: hidden;
     }
@@ -200,8 +204,7 @@ body {
       width: 250px;
       height: 250px;
     }
-  }
-  @media  (max-width: 249.98px) {
+   
     .about-body{
       overflow: hidden;
     }
@@ -233,9 +236,18 @@ body {
     .social-ico .col{
       width: 100%;
     }
-    .social-ico{
+    .social-ico {
       display: flex;
       flex-direction: column;
+      margin-left: 10px;
+    }
+    .about-text{
+      flex-direction: column;
+    }
+    .circle, .text-heart {
+      width: 100%;
+      padding: .2%;
+      margin-left: 5px;
     }
     .h6, h6 {
       font-size: 10px;

@@ -1,9 +1,28 @@
 import React from 'react';
+import './Home.css'
 
 const Home = () => {
     return (
-        <div>
-            <h5>Home page</h5>
+        <div className='home-body'>
+            <div className='offer-banner'>
+                
+            </div>
+            <div className='ourItems'>
+                
+            </div>
+            <div className='exclusive-items'>
+                
+            </div>
+            <div className='why-we-are-best'>
+                
+            </div>
+            <div className='client-review'>
+                
+            </div>
+            <div className='footer-area'>
+                
+            </div>
+            
         </div>
     );
 };

@@ -1,0 +1,12 @@
+.inventory-body{
+    box-sizing: border-box;
+}
+.inventory-body .first-bar{
+    display: flex;
+    background: lightgray;
+    padding: 2%;
+}
+.graph-text{
+    margin-top: 10px;
+    text-align: center;
+}
