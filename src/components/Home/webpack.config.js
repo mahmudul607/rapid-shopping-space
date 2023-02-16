@@ -1,0 +1,1 @@
+resolve.fallback: { "stream": false }

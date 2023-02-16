@@ -1,0 +1,33 @@
+/* .owl-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .owl-dot {
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .owl-dot img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+   */
+   .owl-dot img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+  }
+  .owl-theme .owl-dots .owl-dot span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    border-radius: 50%;
+  }
