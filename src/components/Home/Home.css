@@ -41,54 +41,144 @@
     text-align: center;
 } */
 /* For Classic Solid */
+.home-body .ourItems{
+    margin-bottom: 10px;
+}
+.home-body .ourItems .ourItems-top-text{
+    text-align: left;
+    padding: 5%;
+    padding-bottom: 0 !important;
+    
+}
+.home-body .ourItems .ourItems-top-text h4{
+    width: 22%;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 900;
+    border-bottom: 5px double black;
+}
+.home-body .ourItems .items{
+    display: flex;
+    width: 100%;
+}
+.home-body .ourItems .items .item{
+    width: 33.33%;
+    padding: 5%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 20px;
+    background: rgb(143, 168, 168,0.5);
+}
+.home-body .ourItems .items .item .item-icon{
+    font-size: 50px;
+    color: rgb(44, 43, 38);
+}
 
-  
 
-.before-footer-area{
+
+
+.before-footer-area {
     position: relative;
     box-sizing: border-box;
     height: 400px;
     background-image: url(../../images/bg-gi.gif);
 }
-.before-footer-area .items{
+.before-footer-area-header-text{
+    text-align: center;
+    padding: 2%;
+    color: white;
+    font-weight: 900;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    border-bottom: 10px double rgb(224, 224, 50, 0.5);
+
+
+}
+.before-footer-area .items {
     display: flex;
     width: 100%;
     position: relative;
-    top: 40%;
+    top: 10%;
 }
-.before-footer-area .items .item{
+
+.before-footer-area .items .item {
     width: 25%;
     text-align: center;
     display: flex;
     justify-content: center;
-    
+
 
 }
-.before-footer-area .items .item .span{
+
+.before-footer-area .items .item .span {
     background: transparent lightgray;
 }
-.fa, .fas, .far {
+
+.fa,
+.fas,
+.far {
     font-family: FontAwesome !important;
 }
-.before-footer-area .items .item .options{
+
+.before-footer-area .items .item .options {
     display: flex;
-    background: rgb(107, 97, 97,0.3);
+    position: relative;
+    background: rgb(107, 97, 97, 0.3);
     padding: 5%;
     overflow: hidden;
-    height: 100px;
+    cursor: pointer;
+
 }
-.before-footer-area .items .item .options .icon{
+
+.before-footer-area .items .item .options .icon {
     font-size: 40px;
     color: white;
     margin-right: 10px;
 }
-.before-footer-area .items .item .options::before{
+
+.before-footer-area .items .item .options::before {
     content: '';
     display: block;
-    height: 1%;
-    width: 2%;
-    padding: 5%;
+    top: 0;
+    left: 0;
+    height: 2%;
+    width: 5%;
+    padding: 3%;
     background: yellow;
-    position:absolute;
-    overflow: hidden;
+    position: absolute;
+
 }
+
+.before-footer-area .items .item .options:hover::before {
+    animation: move 4s linear infinite;
+    
+}
+
+/* Define keyframes for the animation */
+@keyframes move {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: 95%;
+    }
+    50% {
+      top: 89%;
+      left: 95%;
+      bottom: 5%;
+      
+     
+    }
+    75% {
+      top: 88%;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+/* Apply the animation to an element */
