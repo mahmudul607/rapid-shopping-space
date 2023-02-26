@@ -5,8 +5,12 @@
 /node_modules
 /.pnp
 .pnp.js
-.config.js
 
+# dependencies
+/src
+/components
+/LoggedIn
+.config.js
 # testing
 /coverage
 
