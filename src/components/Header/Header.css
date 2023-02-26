@@ -51,7 +51,7 @@
 	top: 3px;
 	width: 70%;
 	border: none !important;
-	left: 19.9%;
+	left: 21.9%;
 	margin: 0;
 	height: 85%;
     padding: 2%;
@@ -67,7 +67,7 @@
     width: 20%;
     
 }
-.second-top-bar .search-area:hover .search-category{
+.second-top-bar .search-area .search-category{
    position: relative;
     background-image: url('../../images/rapid-search-category.png');
     height: 100%;
@@ -75,6 +75,7 @@
     border-radius: 40px 40px 40px 40px;
     z-index: 10;
 }
+
 /* dropdown style */
 .search-area .dropdown {
     position: relative;
@@ -213,7 +214,7 @@
 
 }
 .navbar{
-    background: #0a3151;
+    background: #a8bbca;
 }
 
 

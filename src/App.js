@@ -12,6 +12,8 @@ import { addToDatabaseCart, getDatabaseCart } from './utilities/databaseManager'
 import fakeData from './fakeData';
 import GoToTop from './components/GoToTop/GoToTop';
 import Home from './components/Home/Home';
+import LoggedIn from './components/LoggedIn/LoggedIn';
+import Shipment from './components/Shipment/Shipment';
 export const CategoryContext = createContext();
 
 
@@ -68,6 +70,8 @@ const handelAddToCart = (product) => {
         <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
         <Route path="/Review" element={<Review handelAddToCart={handelAddToCart}></Review>}/> 
         <Route path="/Manage" element={<Inventory></Inventory>}/> 
+        <Route path="/Login" element={<LoggedIn></LoggedIn>}/> 
+        <Route path="/Shipment" element={<Shipment></Shipment>}/> 
         <Route path="/About" element={<About></About>}/> 
         <Route exact path="/" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>

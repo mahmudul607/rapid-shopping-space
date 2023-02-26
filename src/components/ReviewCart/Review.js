@@ -6,9 +6,9 @@ import { addToDatabaseCart, clearLocalShoppingCart, getDatabaseCart, removeFromD
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
-import thankYou from '../../images/thank-you-thanks.gif';
+// import thankYou from '../../images/thank-you-thanks.gif';
 import {Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
 
@@ -19,7 +19,9 @@ import Footer from '../Footer/Footer';
 const Review = (props) => {
 const [cart, setCart] = useState([]);
 
-  const [orderPlaced, setOrderPlaced] = useState(false);
+  // const [orderPlaced, setOrderPlaced] = useState(false);
+  let navigate = useNavigate();
+ 
 
   const removeReviewItem = (productKey) => {
     const newCart = cart.filter(pd => pd.key !== productKey);
@@ -68,16 +70,15 @@ const [cart, setCart] = useState([]);
     setCart(cartProducts);
   }, []);
 
-  const placeOrder = () => {
-    setCart([]);
-    setOrderPlaced(true);
-    clearLocalShoppingCart();
+  const placeCheckOut = () => {
+    navigate("/Shipment")
+  
   }
-  let thankyou;
-  if (orderPlaced) {
-    thankyou = <img src={thankYou} alt="thankyou" />
+  // let thankyou;
+  // if (orderPlaced) {
+  //   thankyou = <img src={thankYou} alt="thankyou" />
 
-  }
+  // }
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -116,13 +117,13 @@ const [cart, setCart] = useState([]);
               />)
             }
             {
-              thankyou
+              // thankyou
             }
           </div>
         </div>
         <div id='card-desk1'   className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
-            <button id="review-btn" onClick={placeOrder} style={{position:'relative', zIndex:'500'}}>Place Order</button>
+            <button id="review-btn" onClick={placeCheckOut} style={{position:'relative', zIndex:'500'}}>Place Order</button>
             <button className="review-btn cart-to-shop" type="" style={{ position:'relative', zIndex:'500'}}><Link to="/Shop" >Choose More</Link></button>
           </Cart>
         </div></div>

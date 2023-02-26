@@ -1,54 +1,19 @@
-/* .offer-banner{
-    display: flex;
-    width: 100%;
-}
-.offer-banner .left-side, .offer-banner .right-side{
-    width: 25%;
-  
-}
-.offer-banner .left-side .offer, .offer-banner .right-side .offer{
-    border: 2px solid yellowgreen;
-    width: 100%;
-    background: navajowhite;
-    height: 300px;
-    margin-bottom: 10px;
-    padding: 2%;
-   
-}
-.offer-banner .left-side img, .offer-banner .right-side img{
-    width: 100%;
-    height: 200px;
-}
-.middle-side{
-    width: 50%;
-    height: 600px;
-    margin: 3%;
-    background-image: url(../../images/images.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-.middle-side .offer {
-	position: relative;
-	top: 25%;
-}
-.middle-side .offer .offerImg{
-   
-}
-.offer-item{
-    padding: 2%;
-    text-align: center;
-} */
-/* For Classic Solid */
+
+
+
+/* Offer banner style */
+
+
+/* Offer banner style */
+/* style for our items */
 .home-body .ourItems{
     margin-bottom: 10px;
 }
+
 .home-body .ourItems .ourItems-top-text{
     text-align: left;
     padding: 5%;
     padding-bottom: 0 !important;
-    
 }
 .home-body .ourItems .ourItems-top-text h4{
     width: 22%;
@@ -73,9 +38,13 @@
     font-size: 50px;
     color: rgb(44, 43, 38);
 }
+.home-body .ourItems .items .item .item-name{
+    color: darkgoldenrod;
+    font-size: 30px;
+}
+/* style for our items */
 
-
-
+/* before footer area style */
 
 .before-footer-area {
     position: relative;

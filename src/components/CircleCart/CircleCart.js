@@ -39,19 +39,19 @@ const BottomFixedCart = (props) => {
   const CartIconStyle2 = {
     zIndex:'110', 
     bottom:0, 
-    position:'absolute', 
+    position:'relative', 
     background:'lightGray', 
     textAlign:'center',
-    right:'23%',
     height:'35px',
     width:'35px',
     paddingBottom:0,
     borderRadius:'50% 50% 0 50%',
-    top:20,
+    top:'-35px',
+    left:'-38px',
     color:'red',
     fontSize:'25px',
     padding: '1%',
-    paddingTop: '1%'
+    paddingTop: '1.5%'
     
   }
   const reviewStyle = {
@@ -69,7 +69,7 @@ const BottomFixedCart = (props) => {
   }
 
   return (
-    <div className='circle-cart-body' style={{ position: "fixed", bottom: "10%", width: "300px" , right:0, zIndex:100}}>
+    <div className='circle-cart-body' style={{ position: "fixed", bottom: "10%" , right:30, zIndex:100}}>
       {isExpanded && (
         <div className='circle-cart-details' style={{height:'250px', width:'300px', padding:'5%', paddingTop:'10%'}}>
           <Cart cart={cart}></Cart>

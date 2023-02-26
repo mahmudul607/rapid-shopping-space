@@ -1,0 +1,95 @@
+/* Styles for a navigation bar */
+.navTab-body{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    background-image: url(../../images/bg-gi4.gif);
+    background-size: cover;
+}
+.navTab-body .nav-bar ul {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    list-style-type: none;
+    justify-content: center;
+    /* overflow: scroll; */
+    /* -ms-overflow-style: none;  IE and Edge */
+    /* scrollbar-width: none;  Firefox */
+    
+  }
+  /* .navTab-body .nav-bar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
+  
+  
+
+  
+  .navTab-body .tab-content{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+  }
+  
+
+  .navTab-body ul li:hover{
+    cursor: pointer;
+  }
+  
+  .navTab-body .nav-bar ul li{
+    display: block;
+    border: 2px solid black; 
+    margin: 2%;
+    border-radius: 25px;
+    color: white;
+    background: lightsalmon;
+    text-align: center;
+    padding: 1%;
+    text-decoration: none;
+    height: 80%;
+    overflow: hidden;
+    
+  }
+  
+  .navTab-body ul li img{
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+  }
+  
+  .navTab-body .nav-bar  li.active{
+    border: 5px solid yellow;
+
+   
+    
+  }
+  .navTab-body .nav-bar  .tabs img{
+    scale: 1.1;
+    transition: 1s;
+  }
+  .navTab-body .nav-bar  .tab.active{
+    border: 20px solid yellow !important;
+  }
+  
+  /* Styles for tab content */
+  .navTab-body .tab-content {
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+   
+  }
+  .navTab-body .tab-content .active-content{
+    background-color: rgb(202, 202, 56, 0.6);
+    margin: 1%;
+    width: 60%;
+    height: 300px;
+  }
+  .navTab-body .tab-content .active-content img{
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  
+  

@@ -3,20 +3,28 @@ import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera, faLaptop,  faMobileAndroidAlt, faRecycle, faShippingFast, faTruck, faUmbrella } from '@fortawesome/free-solid-svg-icons';
 
+import fakeData from '../../fakeData';
+import NavTabs from '../NavTabs/NavTabs';
+
 
 
 
 
 
 const Home = () => {
+   
 
+    const data = fakeData.slice(0, 5);
+
+    const images = data.map(pd => pd.img);
+console.log(images);
 
 
     return (
         <div className='home-body'>
             {/* Offer Banner */}
             <div className='offer-banner'>
-
+            <NavTabs></NavTabs>
 
             </div>
             {/* Offer Banner */}
