@@ -184,11 +184,11 @@ const Header = (props) => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-2">
                   <div className='nav-items'>
-                    <Nav.Link href="../Home">Home</Nav.Link>
-                    <Nav.Link href="../Shop">Shop</Nav.Link>
-                    <Nav.Link href="../Review">Order Review</Nav.Link>
-                    <Nav.Link href="/Manage">Manage Inventory</Nav.Link>
-                    <Nav.Link href="../About">About Us</Nav.Link>
+                    <Nav.Link href="../home">Home</Nav.Link>
+                    <Nav.Link href="../shop">Shop</Nav.Link>
+                    <Nav.Link href="../review">Order Review</Nav.Link>
+                    <Nav.Link href="/manage">Manage Inventory</Nav.Link>
+                    <Nav.Link href="../about">About Us</Nav.Link>
                   </div>
                 </Nav>
                 

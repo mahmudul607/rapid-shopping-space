@@ -5,12 +5,6 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const ReviewItem = (props) => {
    
     const {name, quantity, price, key, img} = props.product;
-
-
-   
-
-
-    
     
     return (
         <div className='review-item'>

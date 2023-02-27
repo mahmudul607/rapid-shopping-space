@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 import About from './components/About/About';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Review from './components/ReviewCart/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
@@ -15,10 +15,14 @@ import Home from './components/Home/Home';
 import LoggedIn from './components/LoggedIn/LoggedIn';
 import Shipment from './components/Shipment/Shipment';
 export const CategoryContext = createContext();
+export const LoggedInUser = createContext();
+
 
 
 function App() {
   const [category, setCategory] = useState('')
+  const [loggedInUser, setLoggedInUser] = useState({});
+  console.log(loggedInUser)
   //add
   const [cart, setCart] = useState([]);
   useEffect(() => {
@@ -59,23 +63,38 @@ const handelAddToCart = (product) => {
 //add end
 
   return (
+    <LoggedInUser.Provider value={[loggedInUser, setLoggedInUser]}>
     <CategoryContext.Provider value={[category, setCategory]}>
+      <h4>Email: {loggedInUser.email}</h4>
        
       <BrowserRouter>
+     
       <>
+      
         <Header cart={cart}></Header>
         
+        
       <Routes>
-        <Route path="/Home" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/> 
-        <Route path="/Shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
-        <Route path="/Review" element={<Review handelAddToCart={handelAddToCart}></Review>}/> 
-        <Route path="/Manage" element={<Inventory></Inventory>}/> 
-        <Route path="/Login" element={<LoggedIn></LoggedIn>}/> 
-        <Route path="/Shipment" element={<Shipment></Shipment>}/> 
-        <Route path="/About" element={<About></About>}/> 
+      
+       
+    
+        <Route path="/home" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/> 
+        <Route path="/shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
+        <Route path="/review" element={<Review handelAddToCart={handelAddToCart}></Review>}/> 
+        <Route path="/manage" element={<Inventory></Inventory>}/> 
+        <Route 
+         path="/shipment" 
+         element={ loggedInUser.email ?  <Shipment/> : <Navigate to="/login"/>}/> 
+        <Route path="/login" element={<LoggedIn></LoggedIn>}/>
+        <Route path="/about" element={<About></About>}/> 
         <Route exact path="/" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
+
+        
+         
+        
+        
       </Routes>
       
       <GoToTop></GoToTop>
@@ -84,6 +103,7 @@ const handelAddToCart = (product) => {
       
 
     </CategoryContext.Provider>
+    </LoggedInUser.Provider>
   );
 }
 

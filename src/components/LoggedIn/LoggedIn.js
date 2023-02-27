@@ -4,7 +4,8 @@ import "firebase/auth";
 
 import { firebaseConfig } from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { LoggedInUser } from '../../App';
 firebase.initializeApp(firebaseConfig);
 
 const LoggedIn = () => {
@@ -17,6 +18,10 @@ const LoggedIn = () => {
     photo: '',
     
   })
+
+  const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
+
+
   const provider = new GoogleAuthProvider();
   const handleSignIn = () => {
     const auth = getAuth();
@@ -74,7 +79,7 @@ const LoggedIn = () => {
     }
   }
   const handleSubmit = (e) => {
-    console.log(user.email, user.password);
+    // console.log(user.email, user.password);
     if(newUser && user.email && user.password){
 
 const auth = getAuth();
@@ -106,7 +111,8 @@ createUserWithEmailAndPassword(auth, user.email, user.password)
     newUserInfo.error = '';
     newUserInfo.success = true;
     setUser(newUserInfo);
-    console.log('new user name', res.user)
+    setLoggedInUser(newUserInfo);
+    
     // ...
   })
   .catch(error => {

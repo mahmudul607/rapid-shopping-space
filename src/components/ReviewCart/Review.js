@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import fakeData from '../../fakeData';
@@ -8,8 +8,9 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
 // import thankYou from '../../images/thank-you-thanks.gif';
 import {Container, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import { LoggedInUser } from '../../App';
 
 
 
@@ -68,10 +69,15 @@ const [cart, setCart] = useState([]);
 
     });
     setCart(cartProducts);
-  }, []);
+  }, []); 
+  
 
   const placeCheckOut = () => {
-    navigate("/Shipment")
+
+  
+    navigate("/shipment")
+   
+    
   
   }
   // let thankyou;
@@ -123,7 +129,7 @@ const [cart, setCart] = useState([]);
         </div>
         <div id='card-desk1'   className='cart-desk'><div className="cart-container">
           <Cart cart={cart}>
-            <button id="review-btn" onClick={placeCheckOut} style={{position:'relative', zIndex:'500'}}>Place Order</button>
+            <button id="review-btn" onClick={placeCheckOut} style={{position:'relative', zIndex:'500'}}>CheckOut</button>
             <button className="review-btn cart-to-shop" type="" style={{ position:'relative', zIndex:'500'}}><Link to="/Shop" >Choose More</Link></button>
           </Cart>
         </div></div>
