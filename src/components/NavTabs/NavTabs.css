@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column-reverse;
     width: 100%;
-    background-image: url(../../images/bg-gi4.gif);
-    background-size: cover;
+    background-color: gray;
+    
 }
 .navTab-body .nav-bar ul {
     display: flex;

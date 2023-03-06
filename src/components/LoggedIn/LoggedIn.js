@@ -6,6 +6,8 @@ import { firebaseConfig } from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useContext, useState } from 'react';
 import { LoggedInUser } from '../../App';
+import { Router, useLocation, useNavigate } from 'react-router-dom';
+import { createBrowserHistory, createHashHistory } from '@remix-run/router';
 firebase.initializeApp(firebaseConfig);
 
 const LoggedIn = () => {
@@ -20,6 +22,13 @@ const LoggedIn = () => {
   })
 
   const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
+const navigate = useNavigate();
+const location = useLocation();
+const [state] = useState(location.state || {});
+
+   // <-- redirect to current path w/o state
+
+
 
 
   const provider = new GoogleAuthProvider();
@@ -112,6 +121,9 @@ createUserWithEmailAndPassword(auth, user.email, user.password)
     newUserInfo.success = true;
     setUser(newUserInfo);
     setLoggedInUser(newUserInfo);
+    navigate("/shipment", { replace: true });
+    
+  
     
     // ...
   })

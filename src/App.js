@@ -22,7 +22,7 @@ export const LoggedInUser = createContext();
 function App() {
   const [category, setCategory] = useState('')
   const [loggedInUser, setLoggedInUser] = useState({});
-  console.log(loggedInUser)
+
   //add
   const [cart, setCart] = useState([]);
   useEffect(() => {

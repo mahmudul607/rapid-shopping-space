@@ -7,6 +7,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import React, { useEffect, useState } from "react";
 import logo from "../../images/favi-lg.png";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const Header = (props) => {
@@ -184,11 +185,11 @@ const Header = (props) => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-2">
                   <div className='nav-items'>
-                    <Nav.Link href="../home">Home</Nav.Link>
-                    <Nav.Link href="../shop">Shop</Nav.Link>
-                    <Nav.Link href="../review">Order Review</Nav.Link>
-                    <Nav.Link href="/manage">Manage Inventory</Nav.Link>
-                    <Nav.Link href="../about">About Us</Nav.Link>
+                    <Link to="../home">Home</Link>
+                    <Link to="../shop">Shop</Link>
+                    <Link to="../review">Order Review</Link>
+                    <Link to="/manage">Manage Inventory</Link>
+                    <Link to="../about">About Us</Link>
                   </div>
                 </Nav>
                 

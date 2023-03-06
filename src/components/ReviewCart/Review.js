@@ -1,16 +1,16 @@
-import React, { useContext, useRef } from 'react';
+import React, {  useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import fakeData from '../../fakeData';
-import { addToDatabaseCart, clearLocalShoppingCart, getDatabaseCart, removeFromDatabaseCart} from '../../utilities/databaseManager';
+import { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart} from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Review.css';
 // import thankYou from '../../images/thank-you-thanks.gif';
 import {Container, Row } from 'react-bootstrap';
-import { Link, useNavigate, useOutletContext } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import Footer from '../Footer/Footer';
-import { LoggedInUser } from '../../App';
+
 
 
 
