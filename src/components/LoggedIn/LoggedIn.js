@@ -6,8 +6,7 @@ import { firebaseConfig } from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useContext, useState } from 'react';
 import { LoggedInUser } from '../../App';
-import { Router, useLocation, useNavigate } from 'react-router-dom';
-import { createBrowserHistory, createHashHistory } from '@remix-run/router';
+import { useLocation, useNavigate } from 'react-router-dom';
 firebase.initializeApp(firebaseConfig);
 
 const LoggedIn = () => {
