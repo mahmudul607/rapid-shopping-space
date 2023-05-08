@@ -54,7 +54,6 @@ const handelAddToCart = (product) => {
   else {
       product.quantity = 1;
       newCart = [...cart, product];
-      
   }
   setCart(newCart);
   addToDatabaseCart(product.key, count);
@@ -66,18 +65,10 @@ const handelAddToCart = (product) => {
     <LoggedInUser.Provider value={[loggedInUser, setLoggedInUser]}>
     <CategoryContext.Provider value={[category, setCategory]}>
       <h4>Email: {loggedInUser.email}</h4>
-       
       <BrowserRouter>
-     
       <>
-      
-        <Header cart={cart}></Header>
-        
-        
+        <Header cart={cart}></Header> 
       <Routes>
-      
-       
-    
         <Route path="/home" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/> 
         <Route path="/shop" element={<Shop cart={cart} handelAddToCart={handelAddToCart}></Shop>}/> 
         <Route path="/review" element={<Review handelAddToCart={handelAddToCart}></Review>}/> 
@@ -90,11 +81,6 @@ const handelAddToCart = (product) => {
         <Route exact path="/" element={<Home cart={cart} handelAddToCart={handelAddToCart}></Home>}/>
         <Route path={"/product/:productKey"} element={<ProductDetails></ProductDetails>}/>
         <Route exact path="*" element={<NotFound></NotFound>}/>
-
-        
-         
-        
-        
       </Routes>
       
       <GoToTop></GoToTop>

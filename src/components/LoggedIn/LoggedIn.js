@@ -20,7 +20,7 @@ const LoggedIn = () => {
     
   })
 
-  const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
+const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
 const navigate = useNavigate();
 const location = useLocation();
 const [state] = useState(location.state || {});
@@ -43,6 +43,8 @@ const [state] = useState(location.state || {});
           photo: photoURL
         }
         setUser(signedInUser)
+        setLoggedInUser(signedInUser);
+        navigate("/shipment", { replace: true });
       })
       .catch(err => {
         console.log(err);

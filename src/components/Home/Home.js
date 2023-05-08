@@ -5,18 +5,8 @@ import { faCamera, faLaptop,  faMobileAndroidAlt, faRecycle, faShippingFast, faT
 import NavTabs from '../NavTabs/NavTabs';
 
 
-
-
-
-
 const Home = () => {
    
-
-    
-
-  
-
-
 
     return (
         <div className='home-body'>

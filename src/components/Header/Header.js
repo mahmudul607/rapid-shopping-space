@@ -4,76 +4,22 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../images/favi-lg.png";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { LoggedInUser } from "../../App";
 
 
 const Header = (props) => {
-  // const [showLogin, setShowLogin] = useState(false);
-  // const [showSignup, setShowSignup] = useState(false);
-  // const [userName, setUserName] = useState('My Account');
-  // const [userData, setUserData] = useState([]);
+  
   const [isOpen, setIsOpen] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
 
 
 
   const { cart } = props;
-  // const toggleLogin = () => {
-  //   setShowLogin(!showLogin);
-  //   setShowSignup(false);
-  // }
 
-
-  // const toggleSignup = () => {
-  //   setShowSignup(!showSignup);
-  //   setShowLogin(false);
-  // }
-
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const storedUserData = getUserDatabase();
-  //   if (storedUserData) {
-  //     const userData = JSON.parse(storedUserData);
-  //     const username = userData.username;
-  //     const email = e.target.elements.email.value;
-  //     const password = e.target.elements.password.value;
-
-  //     if (username === email && userData.password === password) {
-  //       setUserName(username);
-  //       setShowLogin(false);
-  //     }
-  //     else {
-  //       console.error("Incorrect email or password");
-  //       alert("Incorrect email or password")
-  //     }
-
-  //   }
-  //   else {
-  //     console.error("Incorrect email or password");
-  //     alert("Please SignUp to Login")
-  //   }
-  // };
-
-
-  // const handleSignup = (e) => {
-  //   e.preventDefault();
-  //   const username = e.target.elements.username.value;
-  //   const email = e.target.elements.email.value;
-  //   const password = e.target.elements.password.value;
-  //   const confirmPassword = e.target.elements.confirmPassword.value;
-  //   if (username && email && password && password === confirmPassword) {
-  //     const userData = { username, email, password };
-  //     localStorage.setItem("userData", JSON.stringify(userData));
-      
-  //     setShowLogin(false);
-  //     setShowSignup(false);
-  //   }
-  //   addToDatabaseUser(username, password, email);
-
-  // };
   
   useEffect(() => {
     const cartDesk = document.getElementById('nav-scroll');
@@ -93,36 +39,7 @@ const Header = (props) => {
 
   return (
     <>
-      {/* {showLogin && (
-        <div className="modal-container">
-          <form className="modal-form" onSubmit={handleLogin}>
-            <h3>Login</h3>
-            <input type="text" id='email' placeholder="Username or Email" required />
-            <input type="password" id='password' placeholder="Password" required />
-            <div className='log-area'>
-              <button type="submit">Login</button>
-              <button type="button" onClick={toggleSignup}>Sign Up</button>
-              <button type="button" onClick={toggleLogin}>Cancel</button>
-
-            </div>
-          </form>
-        </div>
-      )} */}
-      {/* {showSignup && (
-        <div className="modal-container">
-          <form className="modal-form" onSubmit={handleSignup}>
-            <h3>Sign Up</h3>
-            <input type="text" id='username' placeholder="Username" required />
-            <input type="email" id='email' placeholder="Email" required />
-            <input type="password" id='password' placeholder="Password" required />
-            <input type="password" id='confirmPassword' placeholder="Confirm Password" required />
-            <div className='log-area'>
-              <button type="submit">Sign Up</button>
-              <button type="button" onClick={toggleSignup}>Cancel</button>
-            </div>
-          </form>
-        </div>
-      )} */}
+    
       <Container className='header-body' fluid>
         <div className='header-top'>
           <div className='left-side top-bar'><p>Welcome visitor you can login or create an account.</p></div>
@@ -190,6 +107,7 @@ const Header = (props) => {
                     <Link to="../review">Order Review</Link>
                     <Link to="/manage">Manage Inventory</Link>
                     <Link to="../about">About Us</Link>
+                    <button onClick={()=> setLoggedInUser({})}>Log Out</button>
                   </div>
                 </Nav>
                 
