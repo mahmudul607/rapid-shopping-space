@@ -13,6 +13,13 @@
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
   }
+  /* Header user images */
+  .headerUserimg{
+    width: 50%;
+    height:100%;
+    border-radius: 50%;
+    padding: 5px;
+  }
   
 /* search btn style */
 .search-area .search-btn{
@@ -154,7 +161,7 @@
 }
 .header-top{
     width: 100%;
-    height: 30px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     border-bottom: 1px dotted lightgray;
@@ -171,6 +178,7 @@
 }
 .header-top .right-side ul{
     margin-top: 0;
+    height: 100%;
 }
 .header-top .right-side ul li{
     color: white;

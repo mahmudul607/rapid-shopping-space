@@ -45,9 +45,10 @@ const Header = (props) => {
           <div className='left-side top-bar'><p>Welcome visitor you can login or create an account.</p></div>
           <div className='right-side top-bar'>
             <ul>
-              <li><FaUserCircle style={{color:'black', top:0}} />  </li>
-              <li>checkout</li>
-              <li><div className="user" >Login</div></li>
+            <li>{ loggedInUser.photo ? <img className='headerUserimg' src={loggedInUser.photo} alt="" /> : <FaUserCircle style={{color:'black', top:0}} /> }</li>
+              
+              {/* <li>checkout</li> */}
+              <li>{loggedInUser.name ?<button onClick={()=> setLoggedInUser({})}>Log Out</button>: <div className="user" >Login</div>}</li>
             </ul>
           </div>
         </div>
@@ -107,7 +108,7 @@ const Header = (props) => {
                     <Link to="../review">Order Review</Link>
                     <Link to="/manage">Manage Inventory</Link>
                     <Link to="../about">About Us</Link>
-                    <button onClick={()=> setLoggedInUser({})}>Log Out</button>
+                    
                   </div>
                 </Nav>
                 

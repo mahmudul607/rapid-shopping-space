@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './Shipment.css';
 import { LoggedInUser } from '../../App';
+import { Height } from '@mui/icons-material';
 
 const Shipment = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -14,7 +15,7 @@ const Shipment = () => {
   return (
     
     <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
-      
+      <img className='img' src={loggedInUser.photo} alt="" />
       <input name="name" defaultValue={loggedInUser.name} {...register ("name", { required: true })}  placeholder='Your Name' />
       {errors.name && <span>This field is required</span>}
       <input email="Email" defaultValue={loggedInUser.email} {...register ("email", { required: true })}  placeholder='Your Email Address' />
