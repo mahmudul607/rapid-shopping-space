@@ -12,27 +12,29 @@
 .row{
     width: 100% !important;
 }
-ul{
+.product-ul{
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
 }
 
+
 @media  (min-width: 576px) and (max-width: 767.98px){
-    .category-form, .category-form form{
+    .category-form, .category-form .form-items{
         display: flex;
         flex-direction: row;
     }
-    .category-form input{
+    .category-form li{
         font-size: 20px;
         margin-left: 5px;
         margin-right: 5px;
         top: 0;
     }
-    form label {
+    .form-items li {
         
         padding-bottom: 0 !important;
         margin-right: 10px;
+        padding-left: 10px !important;
        
     } 
    
@@ -43,7 +45,7 @@ ul{
     .category-form input {
         display: none;
     }
-    form label {
+    .form-items li {
         
         padding-bottom: 0 !important;
         margin-right: 7px;
@@ -57,14 +59,17 @@ ul{
    
 }
 
-form label{
-    width: 80%;
+.form-items li{
+  
     padding-bottom: 10px;
     font-size: 20px;
     cursor: pointer;
 }
-form input{
-    width: 15%;
+.form-items li{
+   
     margin-right: 5%;
 
+}
+.form-items{
+    padding-left: 0;
 }

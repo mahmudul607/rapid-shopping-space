@@ -64,7 +64,7 @@ const handelAddToCart = (product) => {
   return (
     <LoggedInUser.Provider value={[loggedInUser, setLoggedInUser]}>
     <CategoryContext.Provider value={[category, setCategory]}>
-      <h4>Email: {loggedInUser.email}</h4>
+    
       <BrowserRouter>
       <>
         <Header cart={cart}></Header> 

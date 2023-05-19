@@ -52,18 +52,13 @@ const Shop = (props) => {
                     <div className='cart-section'>
                         <div className='category-form'>
                             <h4>Category:</h4>
-                            <form className='form-items'>
-                                {/* <input type="radio" id="html" name="fav_language" value="HTML" /> */}
-                                <label for="html" onClick={() => setCategory('All')}>All</label><br></br>
-                                {/* <input type="radio" id="css" name="fav_language" value="CSS" /> */}
-                                <label for="css" onClick={() => setCategory('Laptop')}>Laptop</label><br></br>
-                                {/* <input type="radio" id="javascript" name="fav_language" value="JavaScript" /> */}
-                                <label for="javascript" onClick={() => setCategory('Android')}>Mobile</label><br></br>
-                                {/* <input type="radio" id="camera" name="fav_language" value="Camera" /> */}
-                                <label for="camera" onClick={() => setCategory('Camera')}>Camera</label>
-                                {/* <input type="radio" id="watch" name="fav_language" value="watch" /> */}
-                                <label for="watch" onClick={() => setCategory('watch')}>Watch</label>
-                            </form>
+                            <ul className='form-items'>
+                                <li for="html" onClick={() => setCategory('All')}>All</li>
+                                <li for="css" onClick={() => setCategory('Laptop')}>Laptop</li>
+                                <li for="javascript" onClick={() => setCategory('Android')}>Mobile</li>
+                                <li for="camera" onClick={() => setCategory('Camera')}>Camera</li>
+                                <li for="watch" onClick={() => setCategory('watch')}>Watch</li>
+                            </ul>
 
                         </div>
                         {/* <Cart cart={cart}>
@@ -80,7 +75,7 @@ const Shop = (props) => {
                        
                    
 
-                        <ul>
+                        <ul className='product-ul'>
                             {
                                 products.map(product => <Product
                                     showAddToCart={true}
