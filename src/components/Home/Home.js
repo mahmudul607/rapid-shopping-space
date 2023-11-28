@@ -3,6 +3,7 @@ import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera, faLaptop,  faMobileAndroidAlt, faRecycle, faShippingFast, faTruck, faUmbrella } from '@fortawesome/free-solid-svg-icons';
 import NavTabs from '../NavTabs/NavTabs';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -116,6 +117,9 @@ const Home = () => {
 
             </div>
              {/* before-footer-area */}
+
+
+             <Footer></Footer>
 
         </div>
     );

@@ -7,7 +7,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../images/favi-lg.png";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 import { LoggedInUser } from "../../App";
 
 
@@ -35,23 +35,27 @@ const Header = (props) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  let navigate = useNavigate();
+  const loginByClick = () => {
+
+  
+    navigate("/login")
+   
+    
+  
+  }
 
 
   return (
     <>
     
       <Container className='header-body' fluid>
-        <div className='header-top'>
+        {/* <div className='header-top'>
           <div className='left-side top-bar'><p>Welcome visitor you can login or create an account.</p></div>
           <div className='right-side top-bar'>
-            <ul>
-            <li>{ loggedInUser.photo ? <img className='headerUserimg' src={loggedInUser.photo} alt="" /> : <FaUserCircle style={{color:'black', top:0}} /> }</li>
-              
-              {/* <li>checkout</li> */}
-              <li>{loggedInUser.name ?<button onClick={()=> setLoggedInUser({})}>Log Out</button>: <div className="user" >Login</div>}</li>
-            </ul>
+            
           </div>
-        </div>
+        </div> */}
         <div className='second-top-bar'>
           <div className='logo-area'><img src={logo} alt="" title="Rapid Shopping Space" />
           <h5 style={{color:'white', fontWeight:'700', fontStyle:'italic', textShadow:'2px 1px 1px', letterSpacing: '2px'}}>Rapid Shopping Space</h5>
@@ -80,7 +84,14 @@ const Header = (props) => {
             
             
           </div>
-          <div className='cart-area'>cart</div>
+          <div className='cart-area'>
+          <ul style={{cursor:'pointer'}} onClick={loginByClick}>
+            <li>{loggedInUser.photoURL ? <img className='headerUserimg' src={loggedInUser.photoURL} alt="" /> : <FaUserCircle style={{color:'black', top:0}} /> }</li>
+              
+              {/* <li>checkout</li> */}
+              <li style={{color:'white'}}>{loggedInUser.email ?<div onClick={()=>setLoggedInUser({})}>Log Out</div>: <div className="user"  >Login</div>}</li>
+            </ul>
+          </div>
 
         </div>
         <Navbar id='nav-scroll' key={'md'} expand={'md'} className="" >

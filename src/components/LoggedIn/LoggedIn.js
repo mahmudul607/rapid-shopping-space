@@ -1,7 +1,7 @@
 
 import * as firebase from 'firebase/app';
 import "firebase/auth";
-
+import './LoggedIn.css';
 import { firebaseConfig } from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useContext, useState } from 'react';
@@ -16,7 +16,7 @@ const LoggedIn = () => {
     name: '',
     email: '',
     password: '',
-    photo: '',
+    photoURL: '',
     
   })
 
@@ -40,7 +40,7 @@ const [state] = useState(location.state || {});
           isSignedIn: true,
           name: displayName,
           email: email,
-          photo: photoURL
+          photoURL: photoURL
         }
         setUser(signedInUser)
         setLoggedInUser(signedInUser);
@@ -59,7 +59,7 @@ const [state] = useState(location.state || {});
         name: '',
         email: '',
         password: '',
-        photo: '',
+        photoURL: '',
         error: '',
         success: false
       }
@@ -94,14 +94,16 @@ const [state] = useState(location.state || {});
 
 const auth = getAuth();
 createUserWithEmailAndPassword(auth, user.email, user.password)
-  .then(res => {
-    // Signed in 
+  .then(() =>{
+   
     const newUserInfo = {...user};
     newUserInfo.error = '';
     newUserInfo.success = true;
     updateProfileInfo(user.name);
     setUser(newUserInfo);
-    // ...
+    setLoggedInUser(newUserInfo);
+    navigate("/shipment", { replace: true });
+    
   })
   .catch(error => {
     const newUserInfo = {...user};
@@ -115,7 +117,7 @@ createUserWithEmailAndPassword(auth, user.email, user.password)
     if(!newUser && user.email && user.password){
       const auth = getAuth();
       signInWithEmailAndPassword(auth, user.email, user.password)
-     .then(res => {
+     .then(() => {
     // Signed in 
     const newUserInfo = {...user};
     newUserInfo.error = '';
@@ -168,8 +170,8 @@ createUserWithEmailAndPassword(auth, user.email, user.password)
       {
 
         user.isSignedIn && <div>
-          <img src={user.photo} alt="" />
-          <p>Welcome, {user.name}</p>
+          <img src={loggedInUser.photoURL} alt="#" />
+          <p>Welcome, {loggedInUser.name}</p>
         </div>
 
       }

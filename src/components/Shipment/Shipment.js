@@ -7,7 +7,7 @@ import { Height } from '@mui/icons-material';
 const Shipment = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(LoggedInUser)
-    console.log(loggedInUser.name)
+    // console.log(loggedInUser.name)
   const onSubmit = data => console.log(data);
 
   console.log(watch("example"));
@@ -15,7 +15,7 @@ const Shipment = () => {
   return (
     
     <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
-      <img className='img' src={loggedInUser.photo} alt="" />
+      <img className='img' src={loggedInUser.photoURL} alt="" />
       <input name="name" defaultValue={loggedInUser.name} {...register ("name", { required: true })}  placeholder='Your Name' />
       {errors.name && <span>This field is required</span>}
       <input email="Email" defaultValue={loggedInUser.email} {...register ("email", { required: true })}  placeholder='Your Email Address' />
